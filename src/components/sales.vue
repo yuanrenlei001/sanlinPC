@@ -36,6 +36,21 @@
         </div>
       </div>
       <div class="bodys" style="width:33.8%;">
+        <div class="autoTop">
+          <img src="@/assets/sales/sales-icon02.png" alt="" class="autoTopImg">
+          <div class="autoTopText">
+            <img src="@/assets/sales/sales-icon01.png" alt="" class="autoTopIcon">
+            <div class="autoTopRight">
+              <div class="autoTopTexts">电商销售总额 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
+              <div class="autoTopNum">
+                <ul>
+                  <li :class="{'number-item': !isNaN(item) }" v-for="(item,index) in computeNumber" :key="index"><span
+                    v-if="!isNaN(item)">       <i ref="numberItem">0123456789</i>     </span> <span v-else>{{item}}</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bodys" style="width:33.1%;">
       </div>
@@ -48,6 +63,7 @@
   import countTo from 'vue-count-to';
   import echarts from 'echarts'
   export default {
+    props: {   number: {     type: Number,     default: 0   } },
     name: "sales",
     components: { countTo },
     data () {
@@ -61,6 +77,7 @@
         endVal3: 300,
         endVal4: 36867,
         endVal5: 9.43,
+        computeNumber:['0','9','6','9','4','3','3','2','6']
       };
     },
     methods:{
@@ -350,15 +367,64 @@
           ],
         });
       },
+      increaseNumber() {
+        function getRandomNumber (min, max) {   return Math.floor(Math.random() * (max - min + 1) + min) };
+        let self = this
+        this.timer = setInterval(() => {
+          self.newNumber = self.newNumber + getRandomNumber(1, 100)
+          self.setNumberTransform()
+        }, 1000)
+      },
+      setNumberTransform() {
+        let numberItems = this.$refs.numberItem
+        let numberArr = this.computeNumber.filter(item => !isNaN(item))
+        for (let index = 0; index < numberItems.length; index++) {
+          let elem = numberItems[index]
+          elem.style.transform = `translate(-50%, -${numberArr[index] * 10}%)`
+        }
+      }
     },
     mounted(){
       this.drawLine();
       this.drawLine2();
+      this.increaseNumber();
     }
   }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .number-item {
+    width: 30px;
+    /*background: url(./number-bg.png) no-repeat center center;*/
+    background-size: 100% 100%;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    background: #000b21;
+    font-family: 'jsq';
+    float:left;
+    margin-right: 4px;
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    overflow: hidden;}
+  i {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: transform 0.5s ease-in-out;
+    letter-spacing: 10px;
+    color: #ffa210;
+    font-size: 34px;
+    font-style: normal;
+  }
   .content {
     width:100%;height:100%;
     background-image: url("../../src/assets/index/bg.png");
@@ -412,6 +478,12 @@
   .leftTopImg {width: 100%;height:auto;position: relative;top:0;left:0;z-index: 0;}
   .salesLeftTop {position: absolute;top:0;left:0;width: 100%;height:auto;}
   .salesLeftTopText {width: 100%;line-height: 55px;color: #fff;font-size: 20px;position: relative;margin-left: 28px;padding-bottom: 5%;}
+  .autoTop {position: relative;width: 100%;text-align: center;height:auto;margin: 0 30px;}
+  .autoTopImg {width: 100%;height:auto;}
+  .autoTopText {position: absolute;top:0;left:0;background: rgba(255,255,255,.5);width: 100%;}
+  .autoTopText .autoTopIcon {width: auto;height:auto;float:left;margin-top: 5%;margin-left: 13%;}
+  .autoTopRight {width:100%;position: absolute;top:0;right:0;}
+  .autoTopTexts {font-size: 24px;color: #00c0ff;}
   @keyframes ghostUpdown {
     from {
       top:55%;

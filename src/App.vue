@@ -28,4 +28,9 @@ export default {
   a, a:link, a:visited{
     text-decoration:none;
   }
+  ul {
+
+    list-style:none;
+
+  }
 </style>
