@@ -13,8 +13,8 @@
                 <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
-                    <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
-                    <router-link class="windows4 menu active" to="/sales">生活服务</router-link>
+                    <router-link class="windows5 menu active" to="/sales2">乡村运营</router-link>
+                    <router-link class="windows4 menu" to="/sales">生活服务</router-link>
                 </el-col>
             </el-row>
         </div>
@@ -23,14 +23,14 @@
                 <div style="height:auto;margin-bottom: 23px;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
                     <div class="salesLeftTop">
-                        <div class="salesLeftTopText">乡村网络文化建设</div>
+                        <div class="salesLeftTopText">乡镇销售数据一览</div>
                         <div id="myChart" :style="{width: '100%', height: '360px'}"></div>
                     </div>
                 </div>
                 <div style="height:auto;margin-bottom: 23px;position: relative;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
                     <div class="salesLeftTop">
-                        <div class="salesLeftTopText">公共办事服务</div>
+                        <div class="salesLeftTopText">供求预测</div>
                         <div id="myChart2" :style="{width: '100%', height: '360px'}"></div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="autoTopText">
                         <img src="@/assets/sales/sales-icon01.png" alt="" class="autoTopIcon">
                         <div class="autoTopRight">
-                            <div class="autoTopTexts">最多跑一次网上处理 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
+                            <div class="autoTopTexts">三林村总营收额 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
                             <div class="autoTopNum">
                                 <ul>
                                     <li :class="{'number-item': !isNaN(item) }" v-for="(item,index) in computeNumber"
@@ -53,9 +53,9 @@
                         </div>
                     </div>
                     <div class="autoBottomText">
-                        <div class="autoBottom"><img src="@/assets/sales/sales-icon04.png" alt=""> 人民幸福指数：<span
-                                class="autoBottomNum">9</span><span class="autoBottomNum">7.</span><span
-                                class="autoBottomNum">2</span> <span class="autoBottomSpan"></span></div>
+                        <div class="autoBottom"><img src="@/assets/sales/sales-icon04.png" alt=""> 电商注册平台：<span
+                                class="autoBottomNum">1</span><span class="autoBottomNum">3</span><span
+                                class="autoBottomNum">4</span> <span class="autoBottomSpan">个</span></div>
                     </div>
                 </div>
                 <div class="autoBottom">
@@ -72,27 +72,27 @@
                     <div class="rightTopTa">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span>乡村信息惠民服务</span>-------------------------------</div>
+                            <div class="rightTopTa01-2"><span>三林海洋股份有限公司</span>-------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top1-1.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top2.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">乡村数字信息化</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">三林阁文化旅游集团有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top2-2.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top3.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村医疗信息化</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top3-3.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村保障信息化</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林阁文化旅游集团有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
-                        <div class="rightTopTa01" style="opacity: 0;">
+                        <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top5.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村数字信息化</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top5-5.png" alt=""></div>
                         </div>
                     </div>
@@ -106,27 +106,27 @@
                     <div class="rightTopTa">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span>生活富裕</span>-------------------------------</div>
+                            <div class="rightTopTa01-2"><span>三林海洋股份有限公司</span>-------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top1-1.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top2.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">收入水平</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">三林阁文化旅游集团有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top2-2.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top3.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民就业率</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top3-3.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民幸福感</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林阁文化旅游集团有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
-                        <div class="rightTopTa01" style="opacity: 0;">
+                        <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top5.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民幸福感</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top5-5.png" alt=""></div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                 endVal3: 300,
                 endVal4: 36867,
                 endVal5: 9.43,
-                computeNumber: ['0', '0', '0', '0', '3', '7', '2', '1', '4']
+                computeNumber: ['0', '0', '2', '0', '7', '3', '2', '1', '4']
             };
         },
         methods: {
@@ -176,7 +176,7 @@
                         }
                     },
                     legend: {
-                        data: ['乡村网络文化阵地建设', '乡村网络文化引导建设'],
+                        data: ['旅游收入', '产品销售收入'],
                         x: 'right',
                         y: 'canter',
                         padding: [50, 50, 0, 0],
@@ -265,7 +265,7 @@
                     ],
                     series: [
                         {
-                            name: '乡村网络文化阵地建设',
+                            name: '旅游收入',
                             type: 'line',
                             xAxisIndex: 1,
                             data: [400, 300, 425, 400, 450, 250, 550, 380, 410, 390, 301, 400
@@ -298,7 +298,7 @@
                             }
                         },
                         {
-                            name: '乡村网络文化引导建设',
+                            name: '产品销售收入',
                             type: 'line',
                             smooth: true,
                             symbol: 'none',  //这句就是去掉点的

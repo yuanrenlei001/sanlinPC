@@ -12,6 +12,14 @@ Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(fons);
 /* eslint-disable no-new */
+router.beforeEach((to, from, next) => {
+    /* 路由发生变化修改页面title */
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
+    next()
+});
+
 new Vue({
   el: '#app',
   router,
