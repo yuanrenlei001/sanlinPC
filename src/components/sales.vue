@@ -58,18 +58,21 @@
                                 class="autoBottomNum">2</span> <span class="autoBottomSpan"></span></div>
                     </div>
                 </div>
-                <div class="autoBottom">
-                    <div id="myChart3" :style="{width: '100%', height: '500px'}"></div>
+                <div class="autoBottom" style="position: relative;">
+                    <div class="rightTop01" style="position: absolute;top:10%;">
+                        <div class="rightTopText">最受欢迎的TOP5</div>
+                    </div>
+                    <div id="myChart3" :style="{width: '100%', height: '500px'}" style="padding-top: 10%;"></div>
                 </div>
             </div>
             <div class="bodys" style="width:33.1%;">
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                        <div class="rightTopText">最受欢迎的TOP4</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
-                    <div class="rightTopTa">
+                    <div class="rightTopTa" style="margin-bottom: 5%;">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
                             <div class="rightTopTa01-2"><span>乡村信息惠民服务</span>-------------------------------</div>
@@ -90,17 +93,12 @@
                             <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村保障信息化</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
-                        <div class="rightTopTa01" style="opacity: 0;">
-                            <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top5.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村数字信息化</span>------------------------------</div>
-                            <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top5-5.png" alt=""></div>
-                        </div>
                     </div>
                 </div>
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                        <div class="rightTopText">最受欢迎的TOP4</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
                     <div class="rightTopTa">
@@ -123,11 +121,6 @@
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
                             <div class="rightTopTa01-2"><span style="color: #49bdff;">居民幸福感</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
-                        </div>
-                        <div class="rightTopTa01" style="opacity: 0;">
-                            <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top5.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民幸福感</span>------------------------------</div>
-                            <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top5-5.png" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -789,7 +782,7 @@
         margin-top: -9px;
         right:19%;
     }
-    .rightTopTa {width:100%;padding: 0 30px;position: relative;overflow: hidden;}
+    .rightTopTa {width:100%;padding: 0 30px;position: relative;overflow: hidden;margin-top: 5%;}
     .rightTopTa01 {width:100%;height:60px;line-height: 60px;position: relative;margin-bottom: 8px;}
     .rightTopTa01 div {float:left;}
     .rightTopTa01-1 {width:74px;height:100%;margin-right: 10px;}

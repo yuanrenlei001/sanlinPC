@@ -58,8 +58,11 @@
                                 class="autoBottomNum">4</span> <span class="autoBottomSpan">个</span></div>
                     </div>
                 </div>
-                <div class="autoBottom">
-                    <div id="myChart3" :style="{width: '100%', height: '500px'}"></div>
+                <div class="autoBottom" style="position: relative;">
+                    <div class="rightTop01" style="position: absolute;top:10%;">
+                        <div class="rightTopText">最受欢迎的TOP5</div>
+                    </div>
+                    <div id="myChart3" :style="{width: '100%', height: '500px'}" style="padding-top: 10%;"></div>
                 </div>
             </div>
             <div class="bodys" style="width:33.1%;">

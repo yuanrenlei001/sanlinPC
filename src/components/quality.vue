@@ -54,7 +54,7 @@
                     <div class="autoTopText">
                         <img src="@/assets/sales/sales-icon01.png" alt="" class="autoTopIcon" style="opacity: 0;">
                         <div class="autoTopRight">
-                            <div class="autoTopTexts" style="opacity: 0;">电商销售总额 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
+                            <div class="autoTopTexts" style="">生态文明指数 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
                             <div class="autoTopNum">
                                 <ul>
                                     <li :class="{'number-item': !isNaN(item) }" v-for="(item,index) in computeNumber"

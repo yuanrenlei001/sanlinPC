@@ -23,7 +23,7 @@
                 <img src="@/assets/quality/leftBg.png" alt="" class="leftBG">
                 <div class="left">
                     <div style="height:405px;">
-                        <div class="rightBottomTitle" style="position: absolute;top:0;">三品一标产品数据统计</div>
+                        <div class="rightBottomTitle" style="position: absolute;top:0;">各年龄数据统计</div>
                         <div class="leftText"><div id="myChart" :style="{width: '100%', height: '400px'}"></div></div>
                     </div>
                     <div class="date">
@@ -54,7 +54,7 @@
                     <div class="autoTopText">
                         <img src="@/assets/sales/sales-icon01.png" alt="" class="autoTopIcon" style="opacity: 0;">
                         <div class="autoTopRight">
-                            <div class="autoTopTexts" style="opacity: 0;">123 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
+                            <div class="autoTopTexts" style="">总人口数 <img src="@/assets/sales/sales-icon03.png" alt=""></div>
                             <div class="autoTopNum">
                                 <ul>
                                     <li :class="{'number-item': !isNaN(item) }" v-for="(item,index) in computeNumber"
@@ -71,26 +71,26 @@
                     <div class="autoBottomMain">
                         <div class="autoBottomTitle">环境数据</div>
                         <div class="autoBottomSelect">
-                            <span>基　地：</span>
-                            <el-select v-model="value" placeholder="请选择">
-                                <el-option
-                                        v-for="item in options"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                </el-option>
-                            </el-select>
+                            <span>基　地：三林村</span>
+                            <!--<el-select v-model="value" placeholder="请选择">-->
+                                <!--<el-option-->
+                                        <!--v-for="item in options"-->
+                                        <!--:key="item.value"-->
+                                        <!--:label="item.label"-->
+                                        <!--:value="item.value">-->
+                                <!--</el-option>-->
+                            <!--</el-select>-->
                         </div>
                         <div class="autoBottomSelect">
-                            <span>数据源： </span>
-                            <el-select v-model="value" placeholder="请选择">
-                                <el-option
-                                        v-for="item in options"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                </el-option>
-                            </el-select>
+                            <span>数据源：三林村 </span>
+                            <!--<el-select v-model="value" placeholder="请选择">-->
+                                <!--<el-option-->
+                                        <!--v-for="item in options"-->
+                                        <!--:key="item.value"-->
+                                        <!--:label="item.label"-->
+                                        <!--:value="item.value">-->
+                                <!--</el-option>-->
+                            <!--</el-select>-->
                         </div>
                         <div class="autoBottomSelectTitle"><span>采集点1</span>的环境数据如下</div>
                         <div class="rightTop">
@@ -193,14 +193,14 @@
                     <div class="rightTopBg rightTopBg2" style="margin-top: 22px;">
                         <img src="@/assets/quality/rightTop.png" alt="" class="rightTopBgImg">
                         <div class="rightTopBgText">
-                            <!--<div class="rightTopBgText01"><img src="@/assets/quality/rightTopIcon.png" alt=""> 生产信息</div>-->
-                            <div class="rightTopBg22">
-                                <div class="actives">播 种</div>
-                                <div>施 肥</div>
-                                <div>胶 水</div>
-                                <div>害虫防治</div>
-                                <div>农事活动</div>
-                            </div>
+                            <div class="rightTopBgText01"><img src="@/assets/quality/rightTopIcon.png" alt=""> 培训信息</div>
+                            <!--<div class="rightTopBg22">-->
+                                <!--<div class="actives">播 种</div>-->
+                                <!--<div>施 肥</div>-->
+                                <!--<div>胶 水</div>-->
+                                <!--<div>害虫防治</div>-->
+                                <!--<div>农事活动</div>-->
+                            <!--</div>-->
                             <el-table
                                     :data="tableData3"
                                     height="340"
@@ -238,7 +238,7 @@
                 endVal3: 300,
                 endVal4: 36867.5,
                 endVal5: 9.43,
-                computeNumber: ['2', '9', '6', '9', '4', '3', '3', '2', '6'],
+                computeNumber: ['0', '0', '0', '0', '0', '3', '2', '7', '2'],
                 options: [
                     {
                     value: '选项1',
@@ -553,7 +553,7 @@
         border-radius: 0;
         background: rgba(0,0,0,0.1);
     }
-    .rightTopBg2 >>> .el-table__header-wrapper {display: none;}
+    /*.rightTopBg2 >>> .el-table__header-wrapper {display: none;}*/
 
     .rightTopBg22 {width:100%;height:37px;line-height: 37px;padding-top: 13px;}
     .rightTopBg22 div {

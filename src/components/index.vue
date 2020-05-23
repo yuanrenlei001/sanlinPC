@@ -70,11 +70,11 @@
               <div class="cubeMain">
                   <div class="cubeMains cubeMain01 ">
                       <div class="cube-box cube-box1" id="cube-box1">
-                          <div class="cube1 cube  red"></div>
-                          <div class="cube3 cube  red "></div>
-                          <div class="cube5 cube   red "></div>
+                          <div class="cube1 cube"></div>
+                          <div class="cube3 cube"></div>
+                          <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">125.28%</div>
+                      <div class="shadow">125.28</div>
                       <div class="text"><span class="hrs"></span>总指数</div>
                   </div>
                   <div class="cubeMains cubeMain02">
@@ -83,7 +83,7 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">145.14%</div>
+                      <div class="shadow">145.14</div>
                       <div class="text"><span class="hrs"></span>生态绿色化</div>
                   </div>
                   <div class="cubeMains cubeMain03">
@@ -92,7 +92,7 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">134.98%</div>
+                      <div class="shadow">134.98</div>
                       <div class="text"><span class="hrs"></span>要素高端化</div>
                   </div>
                   <div class="cubeMains cubeMain04">
@@ -101,7 +101,7 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">113.44%</div>
+                      <div class="shadow">113.44</div>
                       <div class="text"><span class="hrs"></span>治理现代化</div>
                   </div>
                   <div class="cubeMains cubeMain05">
@@ -110,7 +110,7 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">107.38%</div>
+                      <div class="shadow">107.38</div>
                       <div class="text"><span class="hrs"></span>生活智慧化</div>
                   </div>
                   <div class="cubeMains cubeMain06">
@@ -119,7 +119,7 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">127.36%</div>
+                      <div class="shadow">127.36</div>
                       <div class="text"><span class="hrs"></span>产业数字化</div>
                   </div>
               </div>
@@ -131,7 +131,7 @@
                           <img src="@/assets/index/autoIcon02.png" alt="" class="cubeBottomLeftImg02">
                           <img src="@/assets/index/autoIcon03.png" alt="" class="cubeBottomLeftImg03">
                           <div class="cubeBottomLeft02">
-                              <p>134.98%</p>
+                              <p>134.98</p>
                               <p>指数</p>
                           </div>
                       </div>
@@ -164,7 +164,7 @@
                       <div class="rightTop01">
                           <div class="rightTop01-img">
                               <img src="@/assets/index/icon-deng.png" alt="" class="dizhuo">
-                              <img src="@/assets/index/icon-deng-2.png" alt="" class="icon-deng">
+                              <img src="@/assets/index/icon-deng-1.png" alt="" class="icon-deng">
                           </div>
                           <div class="rightTop01-text">
                               <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal' :duration='10000'></countTo>万</div>
@@ -176,7 +176,7 @@
                           <div class="rightTop02Left" >
                               <div class="rightTop02-img">
                                   <img src="@/assets/index/icon-deng.png" alt="" class="dizhuo">
-                                  <img src="@/assets/index/icon-deng-1.png" alt="" class="icon-deng2">
+                                  <img src="@/assets/index/icon-deng-2.png" alt="" class="icon-deng2">
                               </div>
                               <div class="rightTop02-text">
                                   <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal2' :duration='3000'></countTo>个</div>
@@ -257,7 +257,10 @@
     components: { countTo },
     data () {
       return {
-          height:'300px',
+          _inter:'',
+          _select:'',
+          timeOut:true,
+          height:'400px',
         staImg1:require('@/assets/index/menu.png'),
         num: 0,
         numTween: 0,
@@ -270,43 +273,11 @@
           customColor: ['#cf830e','#21a692','#0d82db','#bb0004'],
         endVal5: 9.43, heights:['165px','240px','220px','135px','115px','175px'],
           selects:'',
-          options: [{
+          options: [
+              {
               value: '0',
-              label: '要素高端化指数分析',
-              data0:'134.98%',
-              data1:'34.98%',
-              obj:[
-                  {name:'要素高端化指数分析',value:'134.98'},
-                  {name:'信息要素指数',value:'103.39'},
-                  {name:'基础要素指数',value:'166.56'},
-              ]
-              // name:['要素高端化指数分析','信息要素指数','基础要素指数'],
-              // num:['134.98','103.39','166.56']
-          }, {
-              value: '1',
-              label: '产业数字化指数分析',
-              data0:'127.36%',
-              data1:'27.36%',
-              obj:[
-                  {name:'产业数字化指数分析',value:'127.36'},
-                  {name:'产业效益指数',value:'118.51'},
-                  {name:'创新驱动指数',value:'150'},
-                  {name:'人才资源指数',value:'106.03'},
-              ]
-          }, {
-              value: '2',
-              label: '治理现代化指数分析',
-              data0:'113.44%',
-              data1:'13.44%',
-              obj:[
-                  {name:'党建水平指数',value:'97.45'},
-                  {name:'治理能力指数',value:'134.96'},
-                  {name:'数字政务指数',value:'104.6'},
-              ]
-          }, {
-              value: '3',
               label: '生态绿色化指数分析',
-              data0:'145.14%',
+              data0:'145.14',
               data1:'45.14%',
               obj:[
                   {name:'生态绿色化指数',value:'145.14'},
@@ -314,34 +285,152 @@
                   {name:'污染防治指数',value:'166.37'},
                   {name:'资源利用指数',value:'135.63'},
               ]
-          }, {
+          },
+              {
+                  value: '1',
+                  label: '要素高端化指数分析',
+                  data0:'134.98',
+                  data1:'34.98%',
+                  obj:[
+                      {name:'要素高端化指数分析',value:'134.98'},
+                      {name:'信息要素指数',value:'103.39'},
+                      {name:'基础要素指数',value:'166.56'},
+                  ]
+                  // name:['要素高端化指数分析','信息要素指数','基础要素指数'],
+                  // num:['134.98','103.39','166.56']
+              },
+              {
+                  value: '2',
+                  label: '治理现代化指数分析',
+                  data0:'113.44',
+                  data1:'13.44%',
+                  obj:[
+                      {name:'党建水平指数',value:'97.45'},
+                      {name:'治理能力指数',value:'134.96'},
+                      {name:'数字政务指数',value:'104.6'},
+                  ]
+              },
+              {
+                  value: '3',
+                  label: '生活智慧化指数分析',
+                  data0:'107.38',
+                  data1:'7.38%',
+                  obj:[
+                      {name:'生活智慧化指数',value:'107.38'},
+                      {name:'基础保障指数',value:'110.13'},
+                      {name:'乡村人文指数',value:'106.94'},
+                      {name:'智能生活指数',value:'104.68'},
+                  ]
+              },
+              {
               value: '4',
-              label: '生活智慧化指数分析',
-              data0:'107.38%',
-              data1:'7.38%',
+              label: '产业数字化指数分析',
+              data0:'127.36',
+              data1:'27.36%',
               obj:[
-                  {name:'生活智慧化指数',value:'107.38'},
-                  {name:'基础保障指数',value:'110.13'},
-                  {name:'乡村人文指数',value:'106.94'},
-                  {name:'智能生活指数',value:'104.68'},
+                  {name:'产业数字化指数分析',value:'127.36'},
+                  {name:'产业效益指数',value:'118.51'},
+                  {name:'创新驱动指数',value:'150'},
+                  {name:'人才资源指数',value:'106.03'},
               ]
-          }],
-          value: '要素高端化指数分析'
+          },
+              {
+                  value: '5',
+                  label: '总指数分析',
+                  data0:'134.98',
+                  data1:'34.98%',
+                  obj:[
+                      {name:'总指数分析',value:'134.98'},
+                      {name:'增长幅度',value:'34.98'},
+                  ]
+              }
+          ],
+          value: '要素高端化指数分析',
+          num:0,
+          type:0
       };
     },
+      created(){
+          // this.timer();
+          this.select();
+      },
     methods:{
+        select(){
+            let _that =this;
+            this._select = setInterval(()=>{
+                _that.selects = _that.options[_that.type];
+                if(_that.type<5){
+                    _that.type++;
+                }else if(_that.type >=5){
+                    _that.type = 0;
+                }
+
+                let boxs = document.getElementsByClassName('cubeMains');
+                let _this= this;
+                for(var i=0;i<boxs.length;i++){
+                    for(var j=0;j<3;j++){
+                        boxs[i].getElementsByClassName("cube")[j].classList.remove('red')
+                        boxs[i].getElementsByClassName("shadow")[0].classList.remove('active')
+                    }
+
+                }
+                if(_that.type == 0){
+                    _that.value = '总指数分析'
+                    document.querySelector('#cube-box1').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box1').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box1').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain01').getElementsByTagName("div")[4].classList.add('active')
+                }else if(_that.type == 1){
+                    _that.value = '生态绿色化指数分析'
+                    document.querySelector('#cube-box2').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box2').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box2').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain02').getElementsByTagName("div")[4].classList.add('active')
+
+                }else if(_that.type == 2){
+                    _that.value = '要素高端化指数分析'
+                    document.querySelector('#cube-box3').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box3').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box3').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain03').getElementsByTagName("div")[4].classList.add('active')
+
+                }else if(_that.type == 3){
+                    _that.value = '治理现代化指数分析'
+                    document.querySelector('#cube-box4').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box4').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box4').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain04').getElementsByTagName("div")[4].classList.add('active')
+                }else if(_that.type == 4){
+                    _that.value = '生活智慧化指数分析'
+                    document.querySelector('#cube-box5').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box5').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box5').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain05').getElementsByTagName("div")[4].classList.add('active')
+
+                }
+                else if(_that.type == 5){
+                    _that.value = '产业数字化指数分析'
+                    document.querySelector('#cube-box6').getElementsByTagName("div")[0].classList.add('red')
+                    document.querySelector('#cube-box6').getElementsByTagName("div")[1].classList.add('red')
+                    document.querySelector('#cube-box6').getElementsByTagName("div")[2].classList.add('red')
+                    document.querySelector('.cubeMain06').getElementsByTagName("div")[4].classList.add('active')
+                }
+            },5000)
+        },
         onSelectedDrug(val){
-            console.log(val)
+            clearInterval(this._select)
             for(var i=0;i<this.options.length;i++){
                 if(this.options[i].value == val){
                     this.selects = this.options[i]
                 }
             }
-            let boxs = document.getElementsByClassName('cube-box');
+            let boxs = document.getElementsByClassName('cubeMains');
             let _this= this;
             for(var i=0;i<boxs.length;i++){
+
                 for(var j=0;j<3;j++){
-                    boxs[i].getElementsByTagName("div")[j].classList.remove('red')
+                    boxs[i].getElementsByClassName("cube")[j].classList.remove('red')
+                    boxs[i].getElementsByClassName("shadow")[0].classList.remove('active')
                 }
 
             }
@@ -349,27 +438,29 @@
                 document.querySelector('#cube-box3').getElementsByTagName("div")[0].classList.add('red')
                 document.querySelector('#cube-box3').getElementsByTagName("div")[1].classList.add('red')
                 document.querySelector('#cube-box3').getElementsByTagName("div")[2].classList.add('red')
+                document.querySelector('.cubeMain03').getElementsByTagName("div")[4].classList.add('active')
             }else if(val == 1){
                 document.querySelector('#cube-box6').getElementsByTagName("div")[0].classList.add('red')
                 document.querySelector('#cube-box6').getElementsByTagName("div")[1].classList.add('red')
                 document.querySelector('#cube-box6').getElementsByTagName("div")[2].classList.add('red')
+                document.querySelector('.cubeMain06').getElementsByTagName("div")[4].classList.add('active')
             }else if(val == 2){
                 document.querySelector('#cube-box4').getElementsByTagName("div")[0].classList.add('red')
                 document.querySelector('#cube-box4').getElementsByTagName("div")[1].classList.add('red')
                 document.querySelector('#cube-box4').getElementsByTagName("div")[2].classList.add('red')
+                document.querySelector('.cubeMain04').getElementsByTagName("div")[4].classList.add('active')
             }else if(val == 3){
                 document.querySelector('#cube-box2').getElementsByTagName("div")[0].classList.add('red')
                 document.querySelector('#cube-box2').getElementsByTagName("div")[1].classList.add('red')
                 document.querySelector('#cube-box2').getElementsByTagName("div")[2].classList.add('red')
+                document.querySelector('.cubeMain02').getElementsByTagName("div")[4].classList.add('active')
             }else if(val == 4){
                 document.querySelector('#cube-box5').getElementsByTagName("div")[0].classList.add('red')
                 document.querySelector('#cube-box5').getElementsByTagName("div")[1].classList.add('red')
                 document.querySelector('#cube-box5').getElementsByTagName("div")[2].classList.add('red')
+                document.querySelector('.cubeMain05').getElementsByTagName("div")[4].classList.add('active')
             }
 
-        },
-        selectss(){
-            this.selects = this.options[0];
         },
         zhu(){
             // setInterval(() => {
@@ -507,11 +598,11 @@
                         },
                     },
                     data: [
-                        {value: 5.84, name: '生活智慧化',itemStyle:{color:'#31b9e4'}},
                         {value: 35.72, name: '生态绿色化',itemStyle:{color:'#1172e1'}},
-                        {value: 27.06, name: '产业数字化',itemStyle:{color:'#d87017'}},
                         {value: 20.76, name: '要素高端化',itemStyle:{color:'#f0d22d'}},
                         {value: 10.62, name: '治理现代化',itemStyle:{color:'#57e0cb'}},
+                        {value: 5.84, name: '生活智慧化',itemStyle:{color:'#31b9e4'}},
+                        {value: 27.06, name: '产业数字化',itemStyle:{color:'#d87017'}},
                     ],
                     emphasis: {
                         itemStyle: {
@@ -524,6 +615,33 @@
             ]
         });
         window.onresize = myChart.resize;
+          startSelectAnimate(myChart, '生态绿色化', ['生态绿色化', '要素高端化', '治理现代化', '生活智慧化' ,'产业数字化'])
+
+
+
+          function startSelectAnimate(myChart, firstSelectName, names) {
+              myChart.dispatchAction({
+                  type: 'highlight',
+                  // 数据的 index，如果不指定也可以通过 name 属性根据名称指定数据
+                  name: firstSelectName
+              });
+              let selectIndex = 1;
+              setInterval(() => {
+                  myChart.dispatchAction({
+                      type: 'downplay',
+                      seriesIndex: 1,
+                  });
+                  myChart.dispatchAction({
+                      type: 'highlight',
+                      // 数据的 index，如果不指定也可以通过 name 属性根据名称指定数据
+                      name: names[selectIndex]
+                  });
+                  selectIndex++
+                  if (selectIndex >= names.length) {
+                      selectIndex = 0;
+                  }
+              }, 5000);
+          }
       },
       auto(){
         let myChart = this.$echarts.init(document.getElementById('myChartMain'))
@@ -626,8 +744,62 @@
             //     this.percentage = 100;
             // }
         },
+        timer(){
+            let _that = this;
+            this._inter = setInterval(()=>{
+
+                    if(_that.num<5){
+                        _that.num++;
+                    }else if(_that.num >=5){
+                        _that.num = 0;
+                    }
+                    let boxs = document.getElementsByClassName('cubeMains');
+                    let _this= this;
+                    for(var i=0;i<boxs.length;i++){
+                        for(var j=0;j<3;j++){
+                            boxs[i].getElementsByClassName("cube")[j].classList.remove('red')
+                            boxs[i].getElementsByClassName("shadow")[0].classList.remove('active')
+                        }
+
+                    }
+                    if(_that.num == 0){
+                        document.querySelector('#cube-box1').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box1').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box1').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain01').getElementsByTagName("div")[4].classList.add('active')
+                    }else if(_that.num == 1){
+                        document.querySelector('#cube-box2').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box2').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box2').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain02').getElementsByTagName("div")[4].classList.add('active')
+                    }else if(_that.num == 2){
+                        document.querySelector('#cube-box3').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box3').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box3').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain03').getElementsByTagName("div")[4].classList.add('active')
+                    }else if(_that.num == 3){
+                        document.querySelector('#cube-box4').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box4').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box4').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain04').getElementsByTagName("div")[4].classList.add('active')
+                    }else if(_that.num == 4){
+                        document.querySelector('#cube-box5').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box5').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box5').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain05').getElementsByTagName("div")[4].classList.add('active')
+                    }
+                    else if(_that.num == 5){
+                        document.querySelector('#cube-box6').getElementsByTagName("div")[0].classList.add('red')
+                        document.querySelector('#cube-box6').getElementsByTagName("div")[1].classList.add('red')
+                        document.querySelector('#cube-box6').getElementsByTagName("div")[2].classList.add('red')
+                        document.querySelector('.cubeMain06').getElementsByTagName("div")[4].classList.add('active')
+                    }
+            },5000)
+
+        }
     },
     mounted(){
+
       this.drawLine();
       // this.auto();
       this.$refs.example.start();
@@ -892,8 +1064,7 @@
 
         };
         start();
-        this.selectss();
-        var speed=40
+        var speed=80
         // 向上滚动
         var demo=document.getElementById("demo");
         var demo2=document.getElementById("demo2");
@@ -1223,6 +1394,8 @@
         color: #fff;
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
+    .cubeMains .shadow.active {color: #ffae00;font-size: 30px;}
+
     .cubeMain02 .shadow {transform: none;
         width: 126px;
         height: 150px;
@@ -1231,10 +1404,10 @@
         bottom: 250px;
         background-image: linear-gradient(rgba(255,0,0,0), rgba(12,97,231,.2));
         z-index: 0;
-        font-size: 30px;
+        font-size: 20px;
         line-height: 130px;
         text-align: center;
-        color: #ffae00;
+        color: #fff;
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMain03 .shadow {transform: none;
