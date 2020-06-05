@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-
     <div class="top" style="position: relative;z-index: 9999;">
       <el-row  >
         <el-col :span="6" class="" style="padding: 0;">
@@ -8,9 +7,15 @@
           <router-link class="windows2 menu" to="/quality2">数字村民</router-link>
           <router-link class="windows3 menu" to="/quality">生态文明</router-link>
         </el-col>
-        <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
+        <el-col :span="3" class="times">
+          <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+            {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+          </div>
+        </el-col>
         <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-        <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+        <el-col :span="3" class="tianqi">
+          <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+        </el-col>
         <el-col :span="6" class="cols windows" style="padding: 0;">
           <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
           <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
@@ -23,7 +28,7 @@
           <!--<div class="btnss large red button">I'm Glowing!</div>-->
             <div style="height:auto;margin-bottom: 23px;position: relative;" ref="element">
                 <img src="@/assets/index/leftBottom.png" alt="" class="leftTopImg">
-                <div class="rightBottomTitle" style="position: absolute;top:0;">总指数变动贡献率测度</div>
+                <div class="rightBottomTitle" style="position: absolute;top:0;">数字乡村发展指数</div>
                 <div class="leftText"><div id="myChart" :style="{width: '100%', height: height}"></div></div>
             </div>
             <div class="donghua2" style="height:auto;position: relative;">
@@ -68,15 +73,15 @@
                   </div>
               </div>
               <div class="cubeMain">
-                  <div class="cubeMains cubeMain01 ">
-                      <div class="cube-box cube-box1" id="cube-box1">
-                          <div class="cube1 cube"></div>
-                          <div class="cube3 cube"></div>
-                          <div class="cube5 cube"></div>
-                      </div>
-                      <div class="shadow">125.28</div>
-                      <div class="text"><span class="hrs"></span>总指数</div>
-                  </div>
+<!--                  <div class="cubeMains cubeMain01 ">-->
+<!--                      <div class="cube-box cube-box1" id="cube-box1">-->
+<!--                          <div class="cube1 cube"></div>-->
+<!--                          <div class="cube3 cube"></div>-->
+<!--                          <div class="cube5 cube"></div>-->
+<!--                      </div>-->
+<!--                      <div class="shadow">125.28</div>-->
+<!--                      <div class="text"><span class="hrs"></span>总指数</div>-->
+<!--                  </div>-->
                   <div class="cubeMains cubeMain02">
                       <div class="cube-box cube-box2" id="cube-box2">
                           <div class="cube1 cube"></div>
@@ -132,7 +137,7 @@
                           <img src="@/assets/index/autoIcon03.png" alt="" class="cubeBottomLeftImg03">
                           <div class="cubeBottomLeft02">
                               <p>134.98</p>
-                              <p>指数</p>
+                              <p>总指数</p>
                           </div>
                       </div>
                   </div>
@@ -144,7 +149,7 @@
                           <img src="@/assets/index/autoIcon06.png" alt="" class="cubeBottomLeftImg03">
                           <div class="cubeBottomLeft02">
                               <p>34.98%</p>
-                              <p>增长幅度</p>
+                              <p>总增长幅度</p>
                           </div>
                       </div>
                   </div>
@@ -251,6 +256,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import countTo from 'vue-count-to';
   export default {
     name: "index",
@@ -271,7 +277,7 @@
         endVal4: 36867,
           percentage: [0,0,0,0],
           customColor: ['#cf830e','#21a692','#0d82db','#bb0004'],
-        endVal5: 9.43, heights:['165px','240px','220px','135px','115px','175px'],
+        endVal5: 9.43, heights:['240px','220px','135px','115px','175px'],
           selects:'',
           options: [
               {
@@ -333,35 +339,62 @@
                   {name:'创新驱动指数',value:'150'},
                   {name:'人才资源指数',value:'106.03'},
               ]
-          },
-              {
-                  value: '5',
-                  label: '总指数分析',
-                  data0:'134.98',
-                  data1:'34.98%',
-                  obj:[
-                      {name:'总指数分析',value:'134.98'},
-                      {name:'增长幅度',value:'34.98'},
-                  ]
-              }
+          }
           ],
           value: '要素高端化指数分析',
-          num:0,
-          type:0
+          type:0,
+        nowDate: "",
+        nowTime: "",
+        nowWeek: "",
+        localweather: {},
+        weatherImg:''
       };
     },
-      created(){
-          // this.timer();
-          this.select();
-      },
+    created() {
+      this.select();
+      // var test = document.getElementById('tianqi').contentWindow.document.getElementsByTagName("em");
+      // test.style.color = "#fff";
+    },
     methods:{
+      currentTime() {
+        setInterval(this.getDate, 500);
+      },
+      getDate: function() {
+        var _this = this;
+        let yy = new Date().getFullYear();
+        let mm = new Date().getMonth() + 1;
+        let dd = new Date().getDate();
+        let week = new Date().getDay();
+        let hh = new Date().getHours();
+        let mf =
+          new Date().getMinutes() < 10
+            ? "0" + new Date().getMinutes()
+            : new Date().getMinutes();
+        if (week == 1) {
+          this.nowWeek = "星期一";
+        } else if (week == 2) {
+          this.nowWeek = "星期二";
+        } else if (week == 3) {
+          this.nowWeek = "星期三";
+        } else if (week == 4) {
+          this.nowWeek = "星期四";
+        } else if (week == 5) {
+          this.nowWeek = "星期五";
+        } else if (week == 6) {
+          this.nowWeek = "星期六";
+        } else {
+          this.nowWeek = "星期日";
+        }
+        _this.nowTime = hh + ":" + mf;
+        _this.nowDate = yy + "/" + mm + "/" + dd;
+      },
         select(){
             let _that =this;
             this._select = setInterval(()=>{
                 _that.selects = _that.options[_that.type];
-                if(_that.type<5){
+                if(_that.type<4){
                     _that.type++;
-                }else if(_that.type >=5){
+                }else if(_that.type >=4){
                     _that.type = 0;
                 }
 
@@ -374,13 +407,7 @@
                     }
 
                 }
-                if(_that.type == 0){
-                    _that.value = '总指数分析'
-                    document.querySelector('#cube-box1').getElementsByTagName("div")[0].classList.add('red')
-                    document.querySelector('#cube-box1').getElementsByTagName("div")[1].classList.add('red')
-                    document.querySelector('#cube-box1').getElementsByTagName("div")[2].classList.add('red')
-                    document.querySelector('.cubeMain01').getElementsByTagName("div")[4].classList.add('active')
-                }else if(_that.type == 1){
+               if(_that.type == 1){
                     _that.value = '生态绿色化指数分析'
                     document.querySelector('#cube-box2').getElementsByTagName("div")[0].classList.add('red')
                     document.querySelector('#cube-box2').getElementsByTagName("div")[1].classList.add('red')
@@ -484,7 +511,7 @@
                 boxs[2].style.height = _this.heights[2];
                 boxs[3].style.height = _this.heights[3];
                 boxs[4].style.height = _this.heights[4];
-                boxs[5].style.height = _this.heights[5];
+                // boxs[5].style.height = _this.heights[5];
                 // for (let item in boxs) {
                 //     if (boxs[item].style) {
                 //         boxs[0].style.height = '165px';
@@ -796,10 +823,34 @@
                     }
             },5000)
 
-        }
+        },
+      searchWeather:function(){
+
+        var that = this;
+        // this.axios({
+        //   type: 'get',     // 通过设置type，来选择是get还是post请求
+        //   url: 'http://wthrcdn.etouch.cn/weather_mini?city='+this.city,
+        //   // url: this.getAjax+'/newsRotatePic.do',    // 访问的后端接口地址
+        //   params: {                // get请求使用params,post请求使用data(data为json格式)
+        //
+        //   }
+        // }).then(res => {
+        //   console.log(res.data.data)
+        // }).catch(err => {
+        //   console.log('请求错误')    // 请求错误弹出警告
+        // })
+        // axios.get('http://wthrcdn.etouch.cn/weather_mini?city='+this.city)
+        //   .then(function(response){
+        //
+        //     console.log(response.data.data.forecast);
+        //     that.weatherList = response.data.data.forecast
+        //   })
+        //   .catch(function(err){})
+      }
     },
     mounted(){
-
+      this.searchWeather();
+      this.currentTime();
       this.drawLine();
       // this.auto();
       this.$refs.example.start();
@@ -1082,11 +1133,18 @@
         demo.onmouseover=function(){clearInterval(MyMar)}
         demo.onmouseout=function(){MyMar=setInterval(Marquee,speed)}
 
+    },
+    beforeDestroy: function() {
+      if (this.getDate) {
+        console.log("销毁定时器")
+        clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
+      }
     }
   }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
     @-webkit-keyframes bigAssButtonPulse {
         from { background-color: #749a02; -webkit-box-shadow: 0 0 25px #333; }
         50% { background-color: #91bd09; -webkit-box-shadow: 0 0 50px #91bd09; }
@@ -1526,7 +1584,7 @@
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain03 .text .hr {display: block;height:105px;border-right: 2px dashed rgba(65,155,164,.2);width: 2px;margin: 0 auto 8px;}
 
-    .cubeMain04 .text {position: absolute;bottom:-26%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain04 .text {position: absolute;bottom:-29%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain04 .text .hrs {display: block;height:202px;border-right: 2px dashed rgba(65,155,164,.2);width: 2px;margin: 0 auto 8px;}
 
@@ -1534,7 +1592,7 @@
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain05 .text .hrs {display: block;height:105px;border-right: 2px dashed rgba(225,217,155,.2);width: 2px;margin: 0 auto 8px;}
 
-    .cubeMain06 .text {position: absolute;bottom:-26%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain06 .text {position: absolute;bottom:-29%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain06 .text .hrs {display: block;height:165px;border-right: 2px dashed rgba(225,217,155,.2);width: 2px;margin: 0 auto 8px;}
 

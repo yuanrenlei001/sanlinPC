@@ -8,9 +8,15 @@
                     <router-link class="windows2 menu active" to="/quality2">数字村民</router-link>
                     <router-link class="windows3 menu" to="/quality">生态文明</router-link>
                 </el-col>
-                <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
-                <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-                <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+              <el-col :span="3" class="times">
+                <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+                  {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+                </div>
+              </el-col>
+              <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
+              <el-col :span="3" class="tianqi">
+                <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+              </el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
                     <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
@@ -36,7 +42,7 @@
                         </div>
                     </div>
                     <div class="approve">
-                        <div class="approveTop">优秀荣誉村民</div>
+                        <div class="approveTop">荣誉村民</div>
                         <div class="approveBottom">
                             <div><span>1</span>张三  获奖时间：1999年</div>
                             <div><span>2</span>李四  获奖时间：1999年</div>
@@ -69,7 +75,7 @@
                 <div class="autoBottom">
                     <img src="@/assets/quality/autoBottom.png" alt="" class="autoBottomImg">
                     <div class="autoBottomMain">
-                        <div class="autoBottomTitle">环境数据</div>
+                        <div class="autoBottomTitle">村民信息</div>
                         <div class="autoBottomSelect">
                             <span>基　地：三林村</span>
                             <!--<el-select v-model="value" placeholder="请选择">-->
@@ -92,7 +98,7 @@
                                 <!--</el-option>-->
                             <!--</el-select>-->
                         </div>
-                        <div class="autoBottomSelectTitle"><span>采集点1</span>的环境数据如下</div>
+<!--                        <div class="autoBottomSelectTitle"><span>采集点1</span>的环境数据如下</div>-->
                         <div class="rightTop">
                             <img src="@/assets/index/hr.png" class="hr" alt="">
                             <div class="rightTop02">
@@ -103,7 +109,7 @@
                                     </div>
                                     <div class="rightTop02-text">
                                         <div class="rightTop01-text01"><span class="rightTop01-text-num" >64</span></div>
-                                        <div class="rightTop01-text02">省级优秀人才</div>
+                                        <div class="rightTop01-text02">文明户</div>
                                     </div>
                                 </div>
                                 <div class="rightTop02Right" >
@@ -113,7 +119,7 @@
                                     </div>
                                     <div class="rightTop02-text">
                                         <div class="rightTop01-text01"><span class="rightTop01-text-num">10</span></div>
-                                        <div class="rightTop01-text02">市级优秀人才</div>
+                                        <div class="rightTop01-text02">村民代表</div>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +134,7 @@
                                     </div>
                                     <div class="rightTop02-text">
                                         <div class="rightTop01-text01"><span class="rightTop01-text-num">14</span></div>
-                                        <div class="rightTop01-text02">镇级优秀人才</div>
+                                        <div class="rightTop01-text02">党员</div>
                                     </div>
                                 </div>
                                 <div class="rightTop02Right" >
@@ -138,7 +144,7 @@
                                     </div>
                                     <div class="rightTop02-text">
                                         <div class="rightTop01-text01"><span class="rightTop01-text-num">17</span></div>
-                                        <div class="rightTop01-text02">村级优秀人才</div>
+                                        <div class="rightTop01-text02">退役军人</div>
                                     </div>
                                 </div>
                             </div>
@@ -153,19 +159,19 @@
                                     </div>
                                     <div class="rightTop02-text">
                                         <div class="rightTop01-text01"><span class="rightTop01-text-num">17</span></div>
-                                        <div class="rightTop01-text02">村级优秀人才</div>
+                                        <div class="rightTop01-text02">帮扶人员</div>
                                     </div>
                                 </div>
-                                <!--<div class="rightTop02Right" >-->
-                                    <!--<div class="rightTop02-img">-->
-                                        <!--<img src="@/assets/index/icon-deng.png" alt="" class="dizhuo">-->
-                                        <!--<img src="@/assets/quality/autoBottom06.png" alt="" class="icon-deng2">-->
-                                    <!--</div>-->
-                                    <!--<div class="rightTop02-text">-->
-                                        <!--<div class="rightTop01-text01"><span class="rightTop01-text-num">8.63</span> %</div>-->
-                                        <!--<div class="rightTop01-text02">P H</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                                <div class="rightTop02Right" >
+                                    <div class="rightTop02-img">
+                                        <img src="@/assets/index/icon-deng.png" alt="" class="dizhuo">
+                                        <img src="@/assets/quality/autoBottom06.png" alt="" class="icon-deng2">
+                                    </div>
+                                    <div class="rightTop02-text">
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">10</span></div>
+                                        <div class="rightTop01-text02">乡 贤</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -178,7 +184,7 @@
                     <div class="rightTopBg">
                         <img src="@/assets/quality/rightTop.png" alt="" class="rightTopBgImg">
                         <div class="rightTopBgText">
-                            <div class="rightTopBgText01"><img src="@/assets/quality/rightTopIcon.png" alt=""> 生产信息</div>
+                            <div class="rightTopBgText01"><img src="@/assets/quality/rightTopIcon.png" alt=""> 培训课程</div>
                             <el-table
                                     :data="tableData3"
                                     height="340"
@@ -202,7 +208,7 @@
                                 <!--<div>农事活动</div>-->
                             <!--</div>-->
                             <el-table
-                                    :data="tableData3"
+                                    :data="tableData4"
                                     height="340"
                                     style="width: 100%;background: transparent;">
                                 <el-table-column width="200" prop="name" label="培训单位" ></el-table-column>
@@ -229,6 +235,9 @@
         components: {countTo},
         data() {
             return {
+              nowDate: "",
+              nowTime: "",
+              nowWeek: "",
                 staImg1: require('@/assets/index/menu.png'),
                 num: 0,
                 numTween: 0,
@@ -258,28 +267,67 @@
                 }],
                 value: '',
                 tableData3: [
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                    {name: '领导力培训', pro: '吴俊', prosort: '三林接待中心',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                    {name: '旅游业发展', pro: '玉琴', prosort: '三林村村委',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                    {name: '农业生态化发展', pro: '人杰', prosort: '研究院',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '领导力培训', pro: '吴俊', prosort: '三林接待中心',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '旅游业发展', pro: '玉琴', prosort: '三林村村委',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '农业生态化发展', pro: '人杰', prosort: '研究院',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '领导力培训', pro: '吴俊', prosort: '三林接待中心',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '旅游业发展', pro: '玉琴', prosort: '三林村村委',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '农业生态化发展', pro: '人杰', prosort: '研究院',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '领导力培训', pro: '吴俊', prosort: '三林接待中心',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '旅游业发展', pro: '玉琴', prosort: '三林村村委',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                  {name: '农业生态化发展', pro: '人杰', prosort: '研究院',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
                     ],
+              tableData4: [
+                {name: '浙大农业部', pro: '2', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林党支部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林生态部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '浙大农业部', pro: '2', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林党支部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林生态部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '浙大农业部', pro: '2', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林党支部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+                {name: '三林生态部', pro: '5', prosort: '50',pronum:'1901213',proliang:'非常欢迎',time:'2019-09-14'},
+              ],
                 rbsort: require('@/assets/quality/rightBottomSort.png'),
                 rbsortAc: require('@/assets/quality/rightBottomAc.png'),
             };
         },
         methods: {
+          currentTime() {
+            setInterval(this.getDate, 500);
+          },
+          getDate: function() {
+            var _this = this;
+            let yy = new Date().getFullYear();
+            let mm = new Date().getMonth() + 1;
+            let dd = new Date().getDate();
+            let week = new Date().getDay();
+            let hh = new Date().getHours();
+            let mf =
+              new Date().getMinutes() < 10
+                ? "0" + new Date().getMinutes()
+                : new Date().getMinutes();
+            if (week == 1) {
+              this.nowWeek = "星期一";
+            } else if (week == 2) {
+              this.nowWeek = "星期二";
+            } else if (week == 3) {
+              this.nowWeek = "星期三";
+            } else if (week == 4) {
+              this.nowWeek = "星期四";
+            } else if (week == 5) {
+              this.nowWeek = "星期五";
+            } else if (week == 6) {
+              this.nowWeek = "星期六";
+            } else {
+              this.nowWeek = "星期日";
+            }
+            _this.nowTime = hh + ":" + mf;
+            _this.nowDate = yy + "/" + mm + "/" + dd;
+          },
             drawLine(){
                 let myChart = this.$echarts.init(document.getElementById('myChart'));
                 let giftImageUrl = require('@/assets/index/leftQuan.png');
@@ -415,9 +463,16 @@
             },
         },
         mounted() {
+          this.currentTime();
             this.increaseNumber();
             this.drawLine();
+        },
+      beforeDestroy: function() {
+        if (this.getDate) {
+          console.log("销毁定时器")
+          clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
         }
+      }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

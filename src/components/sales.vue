@@ -8,9 +8,15 @@
                     <router-link class="windows2 menu" to="/quality2">数字村民</router-link>
                     <router-link class="windows3 menu" to="/quality">生态文明</router-link>
                 </el-col>
-                <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
-                <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-                <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+              <el-col :span="3" class="times">
+                <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+                  {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+                </div>
+              </el-col>
+              <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
+              <el-col :span="3" class="tianqi">
+                <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+              </el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
                     <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
@@ -29,9 +35,18 @@
                 </div>
                 <div style="height:auto;margin-bottom: 23px;position: relative;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
-                    <div class="salesLeftTop">
+                    <div class="salesLeftTop jdt">
                         <div class="salesLeftTopText">公共办事服务</div>
-                        <div id="myChart2" :style="{width: '100%', height: '360px'}"></div>
+                      <el-select v-model="value" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;">
+                        <el-option
+                          v-for="item in options"
+
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
+                        <div id="myChart2" :style="{width: '100%', height: '360px',margin:'-40px 0 0 0'}"></div>
                     </div>
                 </div>
             </div>
@@ -59,8 +74,17 @@
                     </div>
                 </div>
                 <div class="autoBottom" style="position: relative;">
-                    <div class="rightTop01" style="position: absolute;top:10%;">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                    <div class="rightTop01 jdt" style="position: absolute;top:10%;">
+                        <div class="rightTopText">产品流向图</div>
+                      <el-select v-model="value2" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;top:20px;left:40%;z-index: 99999;">
+                        <el-option
+                          v-for="item in options2"
+
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
                     </div>
                     <div id="myChart3" :style="{width: '100%', height: '500px'}" style="padding-top: 10%;"></div>
                 </div>
@@ -140,6 +164,23 @@
         components: {countTo},
         data() {
             return {
+              value:'服务',
+              value2:'2019',
+              options: [
+                {value: '0', label: '最多跑一次',},
+                {value: '1', label: '资讯',},
+                {value: '2', label: '服务',},
+                {value: '3', label: '党建',},
+              ],
+              options2: [
+                {value: '0', label: '2020',},
+                {value: '1', label: '2019',},
+                {value: '2', label: '2018',},
+                {value: '3', label: '2017',},
+              ],
+              nowDate: "",
+              nowTime: "",
+              nowWeek: "",
                 staImg1: require('@/assets/index/menu.png'),
                 staImg2: require('@/assets/sales/mapTitle.png'),
                 num: 0,
@@ -154,6 +195,38 @@
             };
         },
         methods: {
+          currentTime() {
+            setInterval(this.getDate, 500);
+          },
+          getDate: function() {
+            var _this = this;
+            let yy = new Date().getFullYear();
+            let mm = new Date().getMonth() + 1;
+            let dd = new Date().getDate();
+            let week = new Date().getDay();
+            let hh = new Date().getHours();
+            let mf =
+              new Date().getMinutes() < 10
+                ? "0" + new Date().getMinutes()
+                : new Date().getMinutes();
+            if (week == 1) {
+              this.nowWeek = "星期一";
+            } else if (week == 2) {
+              this.nowWeek = "星期二";
+            } else if (week == 3) {
+              this.nowWeek = "星期三";
+            } else if (week == 4) {
+              this.nowWeek = "星期四";
+            } else if (week == 5) {
+              this.nowWeek = "星期五";
+            } else if (week == 6) {
+              this.nowWeek = "星期六";
+            } else {
+              this.nowWeek = "星期日";
+            }
+            _this.nowTime = hh + ":" + mf;
+            _this.nowDate = yy + "/" + mm + "/" + dd;
+          },
             drawLine() {
                 let colors = ['#5793f3', '#e6a405', '#e6a405'];
                 // 基于准备好的dom，初始化echarts实例
@@ -172,7 +245,7 @@
                         data: ['乡村网络文化阵地建设', '乡村网络文化引导建设'],
                         x: 'right',
                         y: 'canter',
-                        padding: [50, 50, 0, 0],
+                        padding: [10, 50, 0, 0],
                         textStyle: {color: '#ffffff'}
                     },
                     grid: {
@@ -340,8 +413,11 @@
                     },
                     "color": ["#e6b418", '#0f94ff'],
                     legend: {
-                        data: ['解决事项', '未解决事项'],
-                        textStyle: {color: '#ffffff'}
+                      x: 'right',
+                      y: 'canter',
+                        data: ['预测数量', '实际数量'],
+                        textStyle: {color: '#ffffff'},
+                      padding: [10, 50, 0, 0],
                     },
                     xAxis: [
                         {
@@ -398,7 +474,7 @@
                     ],
                     series: [
                         {
-                            name: "解决事项",
+                            name: "预测数量",
                             "type": "pictorialBar",
                             "symbolSize": [12, 10],
                             "symbolOffset": [-8, -5],
@@ -437,7 +513,7 @@
                             "data": [300, 345, 450, 480, 360, 170, 180, 390, 270, 180, 90, 260]
                         },
                         {
-                            name: '未解决事项',
+                            name: '实际数量',
                             type: 'bar',
                             "barWidth": "12",
                             data: [200, 245, 350, 380, 260, 100, 130, 290, 170, 80, 90, 160]
@@ -747,15 +823,28 @@
             },
         },
         mounted() {
+          this.currentTime();
             this.drawLine();
             this.drawLine2();
             this.drawLine3();
             this.increaseNumber();
+        },
+      beforeDestroy: function() {
+        if (this.getDate) {
+          console.log("销毁定时器")
+          clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
         }
+      }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .jdt >>> .el-select-dropdown {background-color: #071327 !important; color: #1cd7ff !important;}
+  .jdt >>> .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {background-color: #030813 !important;}
+  .jdt >>> .el-select-dropdown {border: 1px solid #071327 !important;}
+  .jdt >>> .el-select-dropdown__item {color: #1cd7ff !important;}
+  .jdt >>> .el-select {width: 20%;top:-20px;left:20px;}
+  .jdt >>> .el-input__inner {font-size: 16px;height:35px;color: #00c5fe;background: #071327;border: transparent;}
     .rightTop01 {width:100%;padding: 0 30px;position: relative;}
     .rightTop01Img {width: 100%;}
     .rightTop01Img2 {width: 100%;}

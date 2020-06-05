@@ -8,9 +8,15 @@
                     <router-link class="windows2 menu" to="/quality2">数字村民</router-link>
                     <router-link class="windows3 menu" to="/quality">生态文明</router-link>
                 </el-col>
-                <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
-                <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-                <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+              <el-col :span="3" class="times">
+                <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+                  {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+                </div>
+              </el-col>
+              <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
+              <el-col :span="3" class="tianqi">
+                <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+              </el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu  active" to="/product2">乡村治理</router-link>
                     <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
@@ -75,6 +81,9 @@
         components: {countTo},
         data() {
             return {
+              nowDate: "",
+              nowTime: "",
+              nowWeek: "",
                 staImg1: require('@/assets/index/menu.png'),
                 staImg2: require('@/assets/sales/mapTitle.png'),
                 num: 0,
@@ -89,6 +98,38 @@
             };
         },
         methods: {
+          currentTime() {
+            setInterval(this.getDate, 500);
+          },
+          getDate: function() {
+            var _this = this;
+            let yy = new Date().getFullYear();
+            let mm = new Date().getMonth() + 1;
+            let dd = new Date().getDate();
+            let week = new Date().getDay();
+            let hh = new Date().getHours();
+            let mf =
+              new Date().getMinutes() < 10
+                ? "0" + new Date().getMinutes()
+                : new Date().getMinutes();
+            if (week == 1) {
+              this.nowWeek = "星期一";
+            } else if (week == 2) {
+              this.nowWeek = "星期二";
+            } else if (week == 3) {
+              this.nowWeek = "星期三";
+            } else if (week == 4) {
+              this.nowWeek = "星期四";
+            } else if (week == 5) {
+              this.nowWeek = "星期五";
+            } else if (week == 6) {
+              this.nowWeek = "星期六";
+            } else {
+              this.nowWeek = "星期日";
+            }
+            _this.nowTime = hh + ":" + mf;
+            _this.nowDate = yy + "/" + mm + "/" + dd;
+          },
             drawLine() {
                 var colors = [
                     {
@@ -469,11 +510,18 @@
             },
         },
         mounted() {
+          this.currentTime();
             this.drawLine();
             this.drawLine2();
             this.drawLine3();
             // this.increaseNumber();
+        },
+      beforeDestroy: function() {
+        if (this.getDate) {
+          console.log("销毁定时器")
+          clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
         }
+      }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

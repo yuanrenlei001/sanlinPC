@@ -8,9 +8,15 @@
                     <router-link class="windows2 menu" to="/quality2">数字村民</router-link>
                     <router-link class="windows3 menu" to="/quality">生态文明</router-link>
                 </el-col>
-                <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
-                <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-                <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+              <el-col :span="3" class="times">
+                <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+                  {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+                </div>
+              </el-col>
+              <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
+              <el-col :span="3" class="tianqi">
+                <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+              </el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
                     <router-link class="windows5 menu active" to="/sales2">乡村运营</router-link>
@@ -23,14 +29,23 @@
                 <div style="height:auto;margin-bottom: 23px;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
                     <div class="salesLeftTop">
-                        <div class="salesLeftTopText">乡镇销售数据一览</div>
+                        <div class="salesLeftTopText">乡镇旅游收入数据一览</div>
                         <div id="myChart" :style="{width: '100%', height: '360px'}"></div>
                     </div>
                 </div>
                 <div style="height:auto;margin-bottom: 23px;position: relative;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
-                    <div class="salesLeftTop">
-                        <div class="salesLeftTopText">供求预测</div>
+                    <div class="salesLeftTop jdt">
+                        <div class="salesLeftTopText">乡村产品销售数据一览</div>
+                      <el-select v-model="value" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;">
+                        <el-option
+                          v-for="item in options"
+
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
                         <div id="myChart2" :style="{width: '100%', height: '360px'}"></div>
                     </div>
                 </div>
@@ -59,8 +74,17 @@
                     </div>
                 </div>
                 <div class="autoBottom" style="position: relative;">
-                    <div class="rightTop01" style="position: absolute;top:10%;">
+                    <div class="rightTop01 jdt" style="position: absolute;top:10%;">
                         <div class="rightTopText">最受欢迎的TOP5</div>
+                      <el-select v-model="value2" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;top:20px;left:40%;z-index: 99999;">
+                        <el-option
+                          v-for="item in options2"
+
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
                     </div>
                     <div id="myChart3" :style="{width: '100%', height: '500px'}" style="padding-top: 10%;"></div>
                 </div>
@@ -150,6 +174,23 @@
         components: {countTo},
         data() {
             return {
+              value:'西红柿',
+              value2:'2019',
+              options: [
+                {value: '0', label: '土豆',},
+                {value: '1', label: '西红柿',},
+                {value: '2', label: '大豆',},
+                {value: '3', label: '辣椒',},
+              ],
+              options2: [
+                {value: '0', label: '2020',},
+                {value: '1', label: '2019',},
+                {value: '2', label: '2018',},
+                {value: '3', label: '2017',},
+              ],
+              nowDate: "",
+              nowTime: "",
+              nowWeek: "",
                 staImg1: require('@/assets/index/menu.png'),
                 staImg2: require('@/assets/sales/mapTitle.png'),
                 num: 0,
@@ -164,6 +205,38 @@
             };
         },
         methods: {
+          currentTime() {
+            setInterval(this.getDate, 500);
+          },
+          getDate: function() {
+            var _this = this;
+            let yy = new Date().getFullYear();
+            let mm = new Date().getMonth() + 1;
+            let dd = new Date().getDate();
+            let week = new Date().getDay();
+            let hh = new Date().getHours();
+            let mf =
+              new Date().getMinutes() < 10
+                ? "0" + new Date().getMinutes()
+                : new Date().getMinutes();
+            if (week == 1) {
+              this.nowWeek = "星期一";
+            } else if (week == 2) {
+              this.nowWeek = "星期二";
+            } else if (week == 3) {
+              this.nowWeek = "星期三";
+            } else if (week == 4) {
+              this.nowWeek = "星期四";
+            } else if (week == 5) {
+              this.nowWeek = "星期五";
+            } else if (week == 6) {
+              this.nowWeek = "星期六";
+            } else {
+              this.nowWeek = "星期日";
+            }
+            _this.nowTime = hh + ":" + mf;
+            _this.nowDate = yy + "/" + mm + "/" + dd;
+          },
             drawLine() {
                 let colors = ['#5793f3', '#e6a405', '#e6a405'];
                 // 基于准备好的dom，初始化echarts实例
@@ -757,15 +830,28 @@
             },
         },
         mounted() {
+          this.currentTime();
             this.drawLine();
             this.drawLine2();
             this.drawLine3();
             this.increaseNumber();
+        },
+      beforeDestroy: function() {
+        if (this.getDate) {
+          console.log("销毁定时器")
+          clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
         }
+      }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .jdt >>> .el-select-dropdown {background-color: #071327 !important; color: #1cd7ff !important;}
+  .jdt >>> .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {background-color: #030813 !important;}
+  .jdt >>> .el-select-dropdown {border: 1px solid #071327 !important;}
+  .jdt >>> .el-select-dropdown__item {color: #1cd7ff !important;}
+  .jdt >>> .el-select {width: 20%;top:-20px;left:20px;}
+  .jdt >>> .el-input__inner {font-size: 16px;height:35px;color: #00c5fe;background: #071327;border: transparent;}
     .rightTop01 {width:100%;padding: 0 30px;position: relative;}
     .rightTop01Img {width: 100%;}
     .rightTop01Img2 {width: 100%;}

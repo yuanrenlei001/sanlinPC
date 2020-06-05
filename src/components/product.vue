@@ -8,9 +8,15 @@
                     <router-link class="windows2 menu" to="/quality2">数字村民</router-link>
                     <router-link class="windows3 menu" to="/quality">生态文明</router-link>
                 </el-col>
-                <el-col :span="3" class="times"><img src="@/assets/index/time.png" alt=""></el-col>
-                <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
-                <el-col :span="3" class="tianqi"><img src="@/assets/index/tianqi.png" alt=""></el-col>
+              <el-col :span="3" class="times">
+                <div style="color: #fff;font-size: 20px;margin-top: 14%;margin-left: -10%;text-align:center;">
+                  {{ nowDate + ' ' + nowWeek  + ' ' + nowTime }}
+                </div>
+              </el-col>
+              <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
+              <el-col :span="3" class="tianqi">
+                <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+              </el-col>
                 <el-col :span="6" class="cols windows" style="padding: 0;">
                     <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
                     <router-link class="windows5 menu" to="/sales2">乡村运营</router-link>
@@ -22,9 +28,18 @@
             <div class="bodys left" style="width:30%;">
                 <div style="height:auto;margin-bottom: 23px;">
                     <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
-                    <div class="salesLeftTop">
+                    <div class="salesLeftTop jdt">
                         <div class="salesLeftTopText">本年度各类销售情况</div>
-                        <div id="myChart" :style="{width: '100%', height: '360px'}"></div>
+                      <el-select v-model="value" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;">
+                        <el-option
+                          v-for="item in options"
+
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
+                        <div id="myChart" :style="{width: '100%', height: '360px',margin:'-40px 0 0 0'}"></div>
                     </div>
                 </div>
                 <div style="height:auto;margin-bottom: 23px;position: relative;">
@@ -35,8 +50,10 @@
                     </div>
                 </div>
             </div>
-            <div class="bodys" style="width:40%;height:100%;">
+            <div class="bodys" style="width:40%;height:100%;position: relative;">
+              <div @click="showpopup"  style="cursor: pointer;width:300px;height:300px;position: absolute;top:50%;margin-top: -150px;z-index: 999;left:50%;margin-left: -150px;"></div>
                 <img src="@/assets/bg.png" alt="" style="width: 100%;;position: relative;margin-top: 10%;">
+                <img src="@/assets/tc.png" alt="" v-show="popup" style="position: absolute;z-index: 999;left:8%;top:10%;cursor: pointer;" @click="closepopup">
             </div>
             <div class="bodys" style="width:30%;">
                 <div class="rightTop">
@@ -75,6 +92,17 @@
         components: {countTo},
         data() {
             return {
+              popup: 0,
+              nowDate: "",
+              nowTime: "",
+              nowWeek: "",
+              value: '2019',
+              options: [
+                {value: '0', label: '2020',},
+                {value: '1', label: '2019',},
+                {value: '2', label: '2018',},
+                {value: '3', label: '2017',},
+              ],
                 staImg1: require('@/assets/index/menu.png'),
                 staImg2: require('@/assets/sales/mapTitle.png'),
                 num: 0,
@@ -89,6 +117,46 @@
             };
         },
         methods: {
+          //打开活动规则页面
+          showpopup() {
+            this.popup = 1;
+          },
+          //关闭活动规则页面
+          closepopup() {
+            this.popup = 0;
+          },
+          currentTime() {
+            setInterval(this.getDate, 500);
+          },
+          getDate: function() {
+            var _this = this;
+            let yy = new Date().getFullYear();
+            let mm = new Date().getMonth() + 1;
+            let dd = new Date().getDate();
+            let week = new Date().getDay();
+            let hh = new Date().getHours();
+            let mf =
+              new Date().getMinutes() < 10
+                ? "0" + new Date().getMinutes()
+                : new Date().getMinutes();
+            if (week == 1) {
+              this.nowWeek = "星期一";
+            } else if (week == 2) {
+              this.nowWeek = "星期二";
+            } else if (week == 3) {
+              this.nowWeek = "星期三";
+            } else if (week == 4) {
+              this.nowWeek = "星期四";
+            } else if (week == 5) {
+              this.nowWeek = "星期五";
+            } else if (week == 6) {
+              this.nowWeek = "星期六";
+            } else {
+              this.nowWeek = "星期日";
+            }
+            _this.nowTime = hh + ":" + mf;
+            _this.nowDate = yy + "/" + mm + "/" + dd;
+          },
             drawLine() {
                 var colors = [
                     {
@@ -469,15 +537,28 @@
             },
         },
         mounted() {
+          this.currentTime();
             this.drawLine();
             this.drawLine2();
             this.drawLine3();
             // this.increaseNumber();
+        },
+      beforeDestroy: function() {
+        if (this.getDate) {
+          console.log("销毁定时器")
+          clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
         }
+      }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .jdt >>> .el-select-dropdown {background-color: #071327 !important; color: #1cd7ff !important;}
+  .jdt >>> .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {background-color: #030813 !important;}
+  .jdt >>> .el-select-dropdown {border: 1px solid #071327 !important;}
+  .jdt >>> .el-select-dropdown__item {color: #1cd7ff !important;}
+  .jdt >>> .el-select {width: 45%;top:-20px;left:20px;}
+  .jdt >>> .el-input__inner {font-size: 16px;height:35px;color: #00c5fe;background: #071327;border: transparent;}
     .bottomTopText {line-height: 88px;font-size: 24px;}
     .bottomTopText img {vertical-align: middle;}
     .bottomTop {width: 50%;float:left;text-align: center;}

@@ -7,6 +7,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import echarts from 'echarts'
 import fons from '../src/assets/css/font.css'
+import axios from 'axios'; /* 引入axios进行地址访问*/
+Vue.prototype.$http = axios;
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.use(ElementUI);
