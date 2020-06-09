@@ -24,46 +24,303 @@
                 </el-col>
             </el-row>
         </div>
-        <div class="main">
-            <div class="bodys left" style="width:30%;">
-                <div style="height:auto;margin-bottom: 23px;">
-                    <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
-                    <div class="salesLeftTop">
-                        <div class="salesLeftTopText">本年度各类销售情况</div>
-                        <div id="myChart" :style="{width: '100%', height: '360px'}"></div>
+        <div class="main" >
+            <div class="bodys" style="width:464px;margin-right: 13px;">
+                <div class="grid-content" style="height:324px;">
+                    <img src="@/assets/news/bg01.png" alt="" style="width: 100%;">
+                    <div style="position: absolute;top:0;width: 100%;height:300px;">
+                        <div class="rightBottomTitle">人群分布</div>
+                        <div class="leftText" style="position: absolute;top:0;width: 100%;">
+                            <div id="myChart2" :style="{width: '100%', height: '300px'}"></div>
+                        </div>
                     </div>
                 </div>
-                <div style="height:auto;margin-bottom: 23px;position: relative;">
-                    <img src="@/assets/sales/sales-line.png" alt="" class="leftTopImg">
-                    <div class="salesLeftTop">
-                        <div class="salesLeftTopText">农作物产量分析</div>
-                        <div id="myChart2" :style="{width: '100%', height: '360px'}"></div>
+                <div class="grid-content" style="margin: 16px 0 16px 0;">
+                    <img src="@/assets/news/bg05.png" alt="" style="width: 100%;">
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">法治</div>
+                    <div class="fazhi">
+                        <div class="fazhi01">
+                            <div class="news-zbsj-01"><span>·</span> 村民调解员</div>
+                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">王小华</div>
+                        </div>
+                        <div class="fazhi01">
+                            <div class="news-zbsj-01"><span>·</span> 调解次数</div>
+                            <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal5' :duration='5000'></countTo>件</div>
+                        </div>
+                        <img src="@/assets/index/hr.png" class="hr" alt="">
+                        <div class="fazhi01">
+                            <div class="news-zbsj-01"><span>·</span> 村民法律顾问</div>
+                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">顾中华</div>
+                        </div>
+                        <div class="fazhi01">
+                            <div class="news-zbsj-01"><span>·</span> 法律咨询次数</div>
+                            <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal6' :duration='5000'></countTo>件</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-content">
+                    <img src="@/assets/news/bg07.png" alt="" style="height:278px;">
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">河塘治理</div>
+                    <div class="rightTopBgText">
+                        <el-table
+                                :data="tableData3"
+                                height="210"
+                                style="width: 100%;background: transparent;">
+                            <el-table-column width="200" prop="name" label="巡逻员"></el-table-column>
+                            <el-table-column prop="pro" label="巡逻距离"></el-table-column>
+                            <el-table-column prop="prosort" label="巡检次数"></el-table-column>
+                        </el-table>
                     </div>
                 </div>
             </div>
-            <div class="bodys" style="width:40%;height:100%;">
-                <img src="@/assets/bg.png" alt="" style="width: 100%;;position: relative;margin-top: 10%;">
-            </div>
-            <div class="bodys" style="width:30%;">
-                <div class="rightTop">
-                    <div class="rightTop01">
-                        <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">农产品分类</div>
-                        <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
+            <div class="bodys" style="width: 941px;">
+                <div style="height:324px;">
+                    <div style="float:left;width: 50%;">
+                        <div style="position: relative;">
+                            <img src="@/assets/news/bg02.png" alt="" style="height:156px;">
+                            <div class="rightBottomTitle" style="position: absolute;top:0;">最多跑一次</div>
+                            <div class="news-zbsj">
+                                <div class="news-zbsj-sort">
+                                    <div class="news-zbsj-01"><span>·</span> 在办事件</div>
+                                    <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal' :duration='5000'></countTo>件</div>
+                                </div>
+                                <div class="news-zbsj-sort">
+                                    <div class="news-zbsj-01"><span>·</span> 已办事件</div>
+                                    <div class="rightTop01-text01" style="color: #ff5e48;"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal1' :duration='5000'></countTo>件</div>
+                                </div>
+                                <div class="news-zbsj-sort">
+                                    <div class="news-zbsj-01"><span>·</span> 办结率</div>
+                                    <div class="rightTop01-text01" style="color: #ffba00;"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal2' :duration='5000'></countTo>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px;position: relative;">
+                            <img src="@/assets/news/bg02.png" alt="" style="height:156px;">
+                            <div class="rightBottomTitle" style="position: absolute;top:0;">三务公开</div>
+                            <div class="sanwu">
+                                <img src="@/assets/news/icon01.png" alt="">
+                                <div class="sanwu01">
+                                    <p class="sanwu02">三务公开次数</p>
+                                    <div class="sanwu03">
+                                        <div class="rightTop01-text01" style="color: #48e3ff;"><countTo style="margin-left: 0;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal3' :duration='10000'></countTo>次 <span class="newsMore">查看更多新闻</span></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="leftText"><div id="myChart3" :style="{width: '100%', height: '400px'}"></div></div>
+                    <div style="float:left;width: 50%;">
+                        <div style="position: relative;height:324px;">
+                            <img src="@/assets/news/bg01.png" alt="" >
+                            <div style="position: absolute;top:0;width: 100%;height:300px;">
+                                <div class="rightBottomTitle">土地规划</div>
+                                <div class="leftText">
+                                    <div id="myChart" :style="{width: '100%', height: '200px'}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="rightTop">
-                    <div class="rightTop">
+                <div style="margin-top: 16px;position: relative;">
+                    <img src="@/assets/news/bg06.png" alt="" style="">
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">美丽公路</div>
+                    <div class="laji">
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic01.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">保洁员</div>
+                            <div class="user">
+                                <span>王小华</span><img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">
+                            </div>
+                        </div>
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic02.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">分类巡逻员</div>
+                            <div class="user">
+                                <span>盛星宇</span><img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">
+                            </div>
+                        </div>
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic03.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">分类准确率</div>
+                            <div class="user">
+                                <div class="rightTop01-text01" ><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal001' :duration='5000'></countTo>%</div>
+                            </div>
+                        </div>
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic04.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">无垃圾</div>
+                            <div class="user">
+                                <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal002' :duration='5000'></countTo>户</div>
+                            </div>
+                        </div>
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic05.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">有垃圾</div>
+                            <div class="user">
+                                <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal003' :duration='5000'></countTo>户</div>
+                            </div>
+                        </div>
+                        <div class="lajiSort">
+                            <div class="lajiTop">
+                                <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
+                                <img src="@/assets/news/ic06.png" alt="" class="cubeBottomLeftImg02">
+                            </div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">满垃圾</div>
+                            <div class="user">
+                                <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal004' :duration='5000'></countTo>户</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div style="float:left;width: 50%;">
+                        <div class="grid-content">
+                            <img src="@/assets/news/bg07.png" alt="" style="width: 100%;">
+                            <div class="rightBottomTitle" style="position: absolute;top:0;">美丽公路</div>
+                            <div class="rightTopBgText">
+                                <el-table
+                                        :data="tableData3"
+                                        height="210"
+                                        style="width: 100%;background: transparent;">
+                                    <el-table-column width="200" prop="name" label="路长"></el-table-column>
+                                    <el-table-column prop="pronum" label="异常路段"></el-table-column>
+                                </el-table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left;width: 50%;">
+                        <div class="grid-content">
+                            <img src="@/assets/news/bg07.png" alt="" style="width: 100%;">
+                            <div class="rightBottomTitle" style="position: absolute;top:0;">平安乡村</div>
+                            <div class="rightTopBgText">
+                                <el-table
+                                        :data="tableData3"
+                                        height="210"
+                                        style="width: 100%;background: transparent;">
+                                    <el-table-column width="200" prop="name" label="安导员"></el-table-column>
+                                    <el-table-column prop="proliang" label="巡逻时段"></el-table-column>
+                                </el-table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="bodys" style="margin-left: 12px;width: 464px;">
+                <div class="grid-content">
+                    <img src="@/assets/news/bg02.png" alt="" style="width: 100%;">
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">返贫检测</div>
+                    <div class="sanwu">
+                        <img src="@/assets/news/icon01.png" alt="">
+                        <div class="sanwu01">
+                            <p class="sanwu02">返贫人口数</p>
+                            <div class="sanwu03">
+                                <div class="rightTop01-text01" style="color: #48e3ff;"><countTo style="margin-left: 0;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal4' :duration='10000'></countTo>人</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-content" style="margin-top: 16px;">
+                    <img src="@/assets/news/bg04.png" alt="" style="width: 100%;">
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">返贫检测</div>
+                    <div style="position: absolute;top:45px;left:0;">
+                        <div class="rightTop01">
                             <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                    </div>
-                    <div class="bottomTop">
-                        <div class="bottomTopText" style="color: #f7b349;"><img src="@/assets/quality/rightTopIcon2.png" alt=""> 产品分类销售榜</div>
-                        <img src="@/assets/index/bottomRight01.png" alt="">
-                    </div>
-                    <div class="bottomTop">
-                        <div class="bottomTopText" style="color: #00a8d2;"><img src="@/assets/quality/rightTopIcon.png" alt=""> 最受欢迎产品榜</div>
-                        <img src="@/assets/index/bottomRight02.png" alt="">
+                            <div class="rightTopText">年度工作计划</div>
+                            <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
+                        </div>
+                        <div class="news-zbsjs">
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 计划数量</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal01' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 任务数量</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal02' :duration='5000'></countTo>项</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 完成进度</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal03' :duration='5000'></countTo>%</div>
+                            </div>
+                        </div>
+                        <div class="rightTop01">
+                            <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
+                            <div class="rightTopText">党员考核结果</div>
+                            <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
+                        </div>
+                        <div class="news-zbsjs">
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 100分</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal04' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 90-99分</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal05' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 80-89分</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal06' :duration='5000'></countTo>个</div>
+                            </div>
+                            <img src="@/assets/news/icon02.png" class="hr" alt="">
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 70-79分</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal07' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 60-69分</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal08' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="news-zbsj-sort">
+                                <div class="news-zbsj-01s"><span>·</span> 60分以下</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal09' :duration='5000'></countTo>个</div>
+                            </div>
+                        </div>
+                        <div class="rightTop01">
+                            <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
+                            <div class="rightTopText">党员实绩公示</div>
+                            <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
+                        </div>
+                        <div class="fazhi" style="position: relative;top:0;left:0;">
+                            <div class="fazhi01">
+                                <div class="news-zbsj-01"><span>·</span> 参与人数</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal10' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="fazhi01">
+                                <div class="news-zbsj-01"><span>·</span> 实际成绩完成率</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal11' :duration='5000'></countTo>%</div>
+                            </div>
+                        </div>
+                        <div class="rightTop01">
+                            <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
+                            <div class="rightTopText">最受欢迎的TOP5</div>
+                            <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
+                        </div>
+                        <div class="fazhi" style="position: relative;top:0;left:0;">
+                            <div class="fazhi01">
+                                    <div class="news-zbsj-01"><span>·</span> 党员走访</div>
+                                    <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal12' :duration='5000'></countTo>个</div>
+                            </div>
+                            <div class="fazhi01">
+                                <div class="news-zbsj-01"><span>·</span> 完成率</div>
+                                <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal13' :duration='5000'></countTo>%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,12 +346,48 @@
                 num: 0,
                 numTween: 0,
                 startVal: 0,
-                endVal: 364,
-                endVal2: 9,
-                endVal3: 300,
-                endVal4: 36867,
-                endVal5: 9.43,
-                computeNumber: ['0', '9', '6', '9', '4', '3', '3', '2', '6']
+                endVal: 12,
+                endVal1: 8,
+                endVal2: 40,
+                endVal3: 98,
+                endVal4: 123,
+                endVal5: 43,
+                endVal6: 56,
+                endVal01: 71,
+                endVal02: 175,
+                endVal03: 60,
+                endVal04: 14,
+                endVal05: 31,
+                endVal06: 6,
+                endVal07: 0,
+                endVal08: 0,
+                endVal09: 0,
+                endVal10: 71,
+                endVal11: 100,
+                endVal12: 71,
+                endVal13: 100,
+                endVal001: 99,
+                endVal002: 74,
+                endVal003: 54,
+                endVal004: 200,
+                computeNumber: ['0', '9', '6', '9', '4', '3', '3', '2', '6'],
+                tableData3: [
+                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
+                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
+                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
+                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
+                ],
             };
         },
         methods: {
@@ -130,250 +423,210 @@
             _this.nowTime = hh + ":" + mf;
             _this.nowDate = yy + "/" + mm + "/" + dd;
           },
-            drawLine() {
-                var colors = [
-                    {
-                    type: 'linear',
-                    x: 0,
-                    x2: 0,
-                    y: 0,
-                    y2: 1,
-                    colorStops: [{
-                        offset: 0,
-                        color: '#0f6fdc'
-                    }, {
-                        offset: 1,
-                        color: '#29c5f9'
-                    }]
-                }, {
-                    type: 'linear',
-                    x: 0,
-                    x2: 0,
-                    y: 0,
-                    y2: 1,
-                    colorStops: [{
-                        offset: 0,
-                        color: '#0172e2'
-                    }, {
-                        offset: 0.5,
-                        color: '#0656c6'
-                    }, {
-                        offset: 0.5,
-                        color: '#0656c6'
-                    }, {
-                        offset: 1,
-                        color: '#0f299a'
-                    }]
-                }];
-                var barWidth = 25;
-                // 基于准备好的dom，初始化echarts实例
-                let myChart = this.$echarts.init(document.getElementById('myChart'))
+            drawLine(){
+                let myChart = this.$echarts.init(document.getElementById('myChart'));
+                let giftImageUrl = require('@/assets/index/leftQuan.png');
+                myChart.setOption( {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    graphic: {
+                        elements: [{
+                            type: 'image',
+                            style: {
+                                image: giftImageUrl,
+                                width: 188,
+                                height: 188
+                            },
+                            left: 'center',
+                            top: 'center'
+                        }]
+                    },
+                    series: [
+                        {
+                            type: 'pie',
+                            radius: ["9%", "10%"],
+                            center: ['50%', '48%'],
+                            hoverAnimation: false,
+                            labelLine: {
+                                normal: {
+                                    show: false,
+                                    length: 30,
+                                    length2: 55,
+
+                                },
+                                emphasis: {
+                                    show: false
+                                }
+                            },
+                            data: [{
+                                name: '',
+                                value: 0,
+                                itemStyle: {
+                                    normal: {
+                                        color: "#1a9bff"
+                                    }
+                                }
+                            }]
+                        },
+                        {
+                            name: '',
+                            type: 'pie',
+                            radius: ['15%', '40%'],
+                            center: ['50%', '48%'],
+                            roseType: 'area',
+                            zlevel:10,
+                            label: {
+                                normal: {
+                                    position: 'outer',
+                                    padding: [0, -10],
+                                    // alignTo: 'labelLine',
+                                    // bleedMargin: 5,
+                                    //     show:true,
+                                    // formatter: '{c|{c}%}\n{hr|}\n{b|{b}}',
+                                    formatter: (params)=>{
+                                        return '{color'+params.dataIndex+'| '+params.percent+'%}'+'\n'+'{hr'+params.dataIndex+'|}'
+                                            +'\n'+'{b'+params.dataIndex+'| '+params.name+'}'
+                                    },
+                                    rich: {
+                                        color0: {fontSize: 18,align: 'center',padding:3.5},
+                                        color1: {fontSize: 18,align: 'center',padding:3},
+                                        color2: {fontSize: 18,align: 'center',padding:3},
+                                        color3: {fontSize: 18,align: 'center',padding:3},
+                                        color4: {fontSize: 18,align: 'center',padding:3},
+                                        hr0:{borderColor: '#31b9e4',width:'100%',borderWidth: 2,height:0},
+                                        hr1:{borderColor: '#1172e1',width:'100%',borderWidth: 2,height:0},
+                                        hr2:{borderColor: '#d87017',width:'100%',borderWidth: 2,height:0},
+                                        hr3:{borderColor: '#f0d22d',width:'100%',borderWidth: 2,height:0},
+                                        hr4:{borderColor: '#57e0cb',width:'100%',borderWidth: 2,height:0},
+                                        b0: {fontSize: 16,color: '#FFF',align: 'left', padding: 4,},
+                                        b1: {fontSize: 16,color: '#FFF',align: 'left', padding: 4,},
+                                        b2: {fontSize: 16,color: '#FFF',align: 'left', padding: 4,},
+                                        b3: {fontSize: 16,color: '#FFF',align: 'left', padding: 4,},
+                                        b4: {fontSize: 16,color: '#FFF',align: 'left', padding: 4,},
+                                        hr: {
+                                            borderColor: '#CCCCCC',
+                                            width: '100%',
+                                            borderWidth: 1,
+                                            height: 0
+                                        },
+                                        c: {
+                                            fontSize: 16,
+                                            align: 'center',
+                                            padding: 4,
+                                            color:'#00EDED'
+                                        }
+                                    }
+                                },
+                            },
+                            data: [
+                                {value: 2, name: '工业用地',itemStyle:{color:'#31b9e4'}},
+                                {value: 3, name: '林地',itemStyle:{color:'#1172e1'}},
+                                {value: 10, name: '农业用地',itemStyle:{color:'#d87017'}},
+                                {value: 85, name: '宅基地',itemStyle:{color:'#f0d22d'}},
+                            ],
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                });
                 window.onresize = myChart.resize;
-                // 绘制图表
-                myChart.setOption({
-                    xAxis: [
-                        {
-                            type: 'category',
-                            name: '月',
-                            data: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
-                            splitLine: {
-                                show: true,
-                                lineStyle: {
-                                    color: 'rgba(15,148,255,.2)'
-                                },
-
-                            },
-                            axisLine: {
-                                lineStyle: {
-                                    color: 'rgba(15,148,255,1)'
-                                }
-                            },
-                            axisLabel: {   // X轴线 标签修改
-                                textStyle: {
-                                    color: '#ffffff', //坐标值得具体的颜色
-                                }
-                            },
-                        }
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value',
-                            name: '万',
-                            min: 0,
-                            max: 600,
-                            interval: 50,
-                            axisLabel: {
-                                formatter: '{value} ',
-                                textStyle: {
-                                    color: '#ffffff', //坐标值得具体的颜色
-                                }
-
-                            },
-                            axisLine: {
-                                lineStyle: {
-                                    color: 'rgba(15,148,255,1)'
-                                }
-                            },
-                            show: true,
-                            splitLine: {
-                                show: true,
-                                lineStyle: {
-                                    color: 'rgba(15,148,255,.2)'
-                                }
-                            },
-                        },
-
-                    ],
-                    series: [
-                        {
-                            z: 1,
-                            name: '实验频次',
-                            type: 'bar',
-                            barWidth: '20',
-                            data: [300, 345, 450, 480, 360, 170, 180, 390, 270, 180, 90, 260],
-                            itemStyle: {
-                                normal: {
-                                    color: colors[0]
-                                },
-                            }
-                        },
-                        {
-                            z: 3,
-                            type: 'pictorialBar',
-                            symbolPosition: 'end',
-                            data:  [300, 345, 450, 480, 360, 170, 180, 390, 270, 180, 90, 260],
-                            symbol: 'diamond',
-                            symbolOffset: [0, '-50%'],
-                            symbolSize: [barWidth - 7, (10 * (barWidth - 4)) / barWidth],
-                            itemStyle: {
-                                normal: {
-                                    borderColor: '#0f6fdc',
-                                    borderWidth: 1,
-                                    color: '#0f6fdc'
-                                }
-                            },
-                        },
-                        {z: 3,
-                            name:'123',
-                            data:  [300, 345, 450, 480, 360, 170, 180, 390, 270, 180, 90, 260],
-                            lineStyle: {
-                                color: '#ca8b04',
-                                width: 3,
-                            },
-                            type: 'line'
-                        }
-                    ]
-                });
             },
-            drawLine2() {
-                var titlename = ['2015', '2016', '2017', '2018', '2019'];
-                var valdata = [789, 541, 411, 462, 315]
-                var myColor = ['#dd821e', '#ecca29', '#1d92eb', '#1d92eb', '#1d92eb'];
-                var myColorTiao = ['#ff5f10', '#a57400', '#0148a9', '#0148a9', '#0148a9'];
-                // 基于准备好的dom，初始化echarts实例
-                let myChart2 = this.$echarts.init(document.getElementById('myChart2'))
-                window.onresize = myChart2.resize;
-                // 绘制图表
-                myChart2.setOption({
-                    title: {
-                        text: '历年产量分析表',
+            drawLine2(){
+                let myChart = this.$echarts.init(document.getElementById('myChart2'));
+                let giftImageUrl = require('@/assets/index/leftQuan.png');
+                myChart.setOption( {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    graphic: {
+                        elements: [{
+                            type: 'image',
+                            style: {
+                                image: giftImageUrl,
+                                width: 188,
+                                height: 188
+                            },
+                            left: 'center',
+                            top: 'center'
+                        }]
+                    },
+                    legend: {
+                        left: 'center',
+                        top: 'bottom',
+                        padding:[100,50,0,0],
                         textStyle: {
-                            fontSize: 18,
-                            color: '#fff',
+                            color: "#fff"
                         },
+                        data: ['长年供给人', '一般贫困户', '低保贫困户', '一般人员']
                     },
-                    xAxis: {
-                        type: 'value'
-                    },
-                    yAxis: [
-                        {
-                            show: true,
-                            data: titlename,
-                            inverse: true,
-                            axisLine: {
-                                show: false
-                            },
-                            splitLine: {
-                                show: false
-                            },
-                            axisTick: {
-                                show: false
-                            },
-                            axisLabel: {
-                                color: '#fff',
-                                rich: {
-                                    lg: {
-                                        backgroundColor: '#339911',
-                                        color: '#fff',
-                                        borderRadius: 15,
-                                        // padding: 5,
-                                        align: 'center',
-                                        width: 15,
-                                        height: 15
-                                    },
-                                }
-                            },
-
-
-                        }, {
-                            show: false,
-                            inverse: true,
-                            data: valdata,
-                            axisLabel: {
-                                textStyle: {
-                                    fontSize: 12,
-                                    color: '#fff',
-                                },
-                            },
-                            axisLine: {
-                                show: false
-                            },
-                            splitLine: {
-                                show: false
-                            },
-                            axisTick: {
-                                show: false
-                            },
-
-                        }],
                     series: [
                         {
-                            name: '搜索引擎',
-                            type: 'bar',
-                            stack: '总量',
-                            barWidth: 30,
-                            itemStyle: {
+                            type: 'pie',
+                            radius: ["9%", "10%"],
+                            center: ['50%', '50%'],
+                            hoverAnimation: false,
+                            labelLine: {
                                 normal: {
-                                    barBorderRadius: 30,
-                                    color: function(params) {
-                                        var num = myColor.length;
-                                        return myColor[params.dataIndex % num]
-                                    },
+                                    show: false,
+                                    length: 30,
+                                    length2: 55,
+
+                                },
+                                emphasis: {
+                                    show: false
                                 }
                             },
-                            data: [789, 541, 411, 462, 315]
+                            data: [{
+                                name: '',
+                                value: 0,
+                                itemStyle: {
+                                    normal: {
+                                        color: "#1a9bff"
+                                    }
+                                }
+                            }]
                         },
                         {
-                            name: '框',
-                            type: 'bar',
-                            yAxisIndex: 1,
-                            barGap: '-100%',
-                            data:[789, 541, 411, 462, 315],
-                            barWidth: 30,
-                            itemStyle: {
+                            name: '',
+                            type: 'pie',
+                            radius: ['25%', '40%'],
+                            center: ['50%', '50%'],
+                            zlevel:10,
+                            label: {
                                 normal: {
-                                    color: 'none',
-                                    borderColor: function(params) {
-                                        var num = myColorTiao.length;
-                                        return myColorTiao[params.dataIndex % num]
-                                    },
-                                    borderWidth: 3,
-                                    barBorderRadius: 20,
+                                    formatter: '{d}%  ',
+
+                                        show:true,
+                                },
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                            data: [
+                                {value: 2, name: '长年供给人',itemStyle:{color:'#5ae1cc'}},
+                                {value: 3, name: '一般贫困户',itemStyle:{color:'#1172e1'}},
+                                {value: 10, name: '低保贫困户',itemStyle:{color:'#d87117'}},
+                                {value: 85, name: '一般人员',itemStyle:{color:'#0864da'}},
+                            ],
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                                 }
                             }
                         }
                     ]
                 });
+                window.onresize = myChart.resize;
             },
             increaseNumber() {
                 function getRandomNumber(min, max) {
@@ -513,7 +766,7 @@
           this.currentTime();
             this.drawLine();
             this.drawLine2();
-            this.drawLine3();
+            // this.drawLine3();
             // this.increaseNumber();
         },
       beforeDestroy: function() {
@@ -526,34 +779,97 @@
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .user {position: relative;margin-top: 10px;}
+    .user span {font-size: 22px;color: #48e3ff;}
+    .ic04 {vertical-align: middle;margin-left: 5px;}
+    .ic05 {position: absolute;top:-24px;right:0;display: none;}
+    @-webkit-keyframes rotations{
+        from {-webkit-transform: rotate(360deg);}
+        to {-webkit-transform: rotate(0deg);}
+    }
+    @-webkit-keyframes rotation{
+        from {-webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(360deg);}
+    }
+    .cubeBottomLeftImg01 {
+        width: 99px;
+        height:99px;
+        -webkit-transform: rotate(360deg);
+        animation: rotation 3s linear infinite;
+        -moz-animation: rotation 3s linear infinite;
+        -webkit-animation: rotation 3s linear infinite;
+        -o-animation: rotation 3s linear infinite;
+    }
+    .cubeBottomLeftImg02 {
+        position: absolute;
+        top:50%;
+        margin-top: -15px;
+        left:50%;
+        margin-left: -15px;
+        width: 30px;
+        height:30px;
+    }
+    .lajiTop {position: relative;margin-top: 20px;}
+    .laji {position: absolute;top:45px;left:0;width: 100%;}
+    .lajiSort {width: 16.66%;text-align: center;float:left;}
+    .hr {position: relative;width: 90%;height:1px;left:5%;}
+    .fazhi {position: absolute;top:45px;left:0;width: 100%;}
+    .fazhi01 {width: 48%;text-align: center;float:left;height:103px;}
+    .newsMore {color: #48bcff;font-size: 14px;}
+    .sanwu {position: absolute;top:65px;left:20%;}
+    .sanwu img {float:left;width: 82px;height:70px;}
+    .sanwu01 {margin-left: 102px;text-align: left;}
+    .sanwu02 {color: #fff;font-size: 18px;}
+    .rightTop01-text-num {font-size: 40px;font-family: 'jsq';margin-left: 10%;}
+    .news-zbsj-sort {width: 33.33%;float:left;text-align: center;}
+    .news-zbsj-01 {font-size: 18px;color: #fff;padding-top: 20px;}
+    .news-zbsj-01s {font-size: 18px;color: #fff;padding-top: 10px;}
+    .news-zbsj-01 span {color: #ff9600;}
+    .news-zbsj-01s span {color: #ff9600;}
+    .news-zbsj {position: absolute;top:45px;left:0;width: 100%;}
+    .news-zbsjs {position: relative;width: 100%;}
+    .rightTop01-text01 {font-size: 12px;color: #48e3ff;}
+    .rightBottomTitle {width: 100%;line-height: 45px;color: #fff;font-size: 20px;position: relative;margin-left: 28px;padding-bottom: 5%;}
+    .rightTopBgText {position: absolute;top:55px;left:0;padding: 0 15px;width: 95%;}
+    .rightTopBgText01 {height:45px;line-height: 45px;font-size: 18px;color: #1dadff;}
+    .rightTopBgText01 img {vertical-align: middle;}
+    .rightTopBgText >>> .el-table th {background-color: transparent;padding: 0;}
+    .rightTopBgText >>> .el-table tr {background-color: transparent;}
+    .rightTopBgText >>> .el-table td {border-bottom: none;padding: 0;}
+    .rightTopBgText >>> .el-table th.is-leaf {border-bottom: none;}
+    .rightTopBgText >>> .el-table__header-wrapper {height:40px;background: #0b3262;font-size: 16px;color: #36d2ff;line-height: 40px;}
+    .rightTopBgText >>> .el-table th>.cell {color: #36d2ff;font-weight: 100;}
+    .rightTopBgText >>> .el-table::before {height:0;}
+    .rightTopBgText >>> .el-table__body-wrapper tr{height: 45px;color: #b6cde5;}
+    .rightTopBgText >>> .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar {width: 4px;}
+    .rightTopBgText >>> .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(16,46,75,1);
+    }
+    .rightTopBgText >>> .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 0;
+        background: rgba(0,0,0,0.1);
+    }
+    .grid-content {position: relative;}
     .bottomTopText {line-height: 88px;font-size: 24px;}
     .bottomTopText img {vertical-align: middle;}
     .bottomTop {width: 50%;float:left;text-align: center;}
     .rightTop01 {width:100%;padding: 0 30px;position: relative;}
     .rightTop01Img {width: 100%;}
     .rightTop01Img2 {width: 100%;}
-    .rightTopText {position: relative;height:60px;line-height: 60px;color: #e99b1f;font-size: 32px;margin: auto;text-align: center;}
+    .rightTopText {position: relative;height:20px;line-height: 30px;color: #1dadff;font-size: 18px;margin: auto;text-align: left;padding-left: 30px;}
     .rightTopText:before {
         content: '';
-        background-image: url("../assets/sales/sales-left.png");
+        background-image: url("../assets/quality/rightTopIcon.png");
         background-repeat: no-repeat;
-        background-size: 40px 18px;
-        width:40px;height:18px;
+        background-size: 21px 18px;
+        width:21px;height:18px;
         position: absolute;
-        top:50%;
+        top:70%;
         margin-top: -9px;
-        left:19%;
-    }
-    .rightTopText:after {
-        content: '';
-        background-image: url("../assets/sales/sales-right.png");
-        background-repeat: no-repeat;
-        background-size: 40px 18px;
-        width:40px;height:18px;
-        position: absolute;
-        top:50%;
-        margin-top: -9px;
-        right:19%;
+        left:0;
     }
     .rightTopTa {width:100%;padding: 0 30px;position: relative;overflow: hidden;}
     .rightTopTa01 {width:100%;height:60px;line-height: 60px;position: relative;margin-bottom: 8px;}
@@ -750,7 +1066,7 @@
         width: 100%;
         height: auto;
         position: relative;
-        padding: 0 20px;
+        padding: 0 12px;
         margin-top: -27px;
     }
 

@@ -51,7 +51,7 @@
                     <div class="leftBottomBg" style="padding-top: 22px;">
                         <div class="leftBottomBg01" v-for="(item,index) in selects.obj">
                             <p style="font-size: 16px;color: #fff;margin-bottom: 5px;" >{{item.name}}</p>
-                            <el-progress :text-inside="false" :stroke-width="27" :percentage="(item.value/2)"  :color="customColor[index]" style="font-size: 18px;"></el-progress>
+                            <el-progress :text-inside="false" :stroke-width="27" :percentage="(item.value/3)"  :color="customColor[index]" style="font-size: 18px;"></el-progress>
                             <div style="position: absolute;bottom:0;right:0;line-height: 27px;color: #48e3ff;">{{item.value}}%</div>
                         </div>
                     </div>
@@ -88,8 +88,8 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">145.14</div>
-                      <div class="text"><span class="hrs"></span>生态绿色化</div>
+                      <div class="shadow">113.44</div>
+                      <div class="text"><span class="hrs"></span>治理现代化</div>
                   </div>
                   <div class="cubeMains cubeMain03">
                       <div class="cube-box cube-box3" id="cube-box3">
@@ -97,8 +97,8 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">134.98</div>
-                      <div class="text"><span class="hrs"></span>要素高端化</div>
+                      <div class="shadow">145.14</div>
+                      <div class="text"><span class="hrs"></span>生态绿色化</div>
                   </div>
                   <div class="cubeMains cubeMain04">
                       <div class="cube-box cube-box4" id="cube-box4">
@@ -106,8 +106,8 @@
                           <div class="cube3 cube"></div>
                           <div class="cube5 cube"></div>
                       </div>
-                      <div class="shadow">113.44</div>
-                      <div class="text"><span class="hrs"></span>治理现代化</div>
+                      <div class="shadow">134.98</div>
+                      <div class="text"><span class="hrs"></span>要素高端化</div>
                   </div>
                   <div class="cubeMains cubeMain05">
                       <div class="cube-box cube-box5" id="cube-box5">
@@ -277,11 +277,22 @@
         endVal4: 36867,
           percentage: [0,0,0,0],
           customColor: ['#cf830e','#21a692','#0d82db','#bb0004'],
-        endVal5: 9.43, heights:['240px','220px','135px','115px','175px'],
+        endVal5: 9.43, heights:['175px','245px','220px','135px','190px'],
           selects:'',
           options: [
               {
-              value: '0',
+                  value: '0',
+                  label: '治理现代化指数分析',
+                  data0:'113.44',
+                  data1:'13.44%',
+                  obj:[
+                      {name:'党建水平指数',value:'97.45'},
+                      {name:'治理能力指数',value:'134.96'},
+                      {name:'数字政务指数',value:'104.6'},
+                  ]
+              },
+              {
+              value: '1',
               label: '生态绿色化指数分析',
               data0:'145.14',
               data1:'45.14%',
@@ -293,7 +304,7 @@
               ]
           },
               {
-                  value: '1',
+                  value: '2',
                   label: '要素高端化指数分析',
                   data0:'134.98',
                   data1:'34.98%',
@@ -305,17 +316,7 @@
                   // name:['要素高端化指数分析','信息要素指数','基础要素指数'],
                   // num:['134.98','103.39','166.56']
               },
-              {
-                  value: '2',
-                  label: '治理现代化指数分析',
-                  data0:'113.44',
-                  data1:'13.44%',
-                  obj:[
-                      {name:'党建水平指数',value:'97.45'},
-                      {name:'治理能力指数',value:'134.96'},
-                      {name:'数字政务指数',value:'104.6'},
-                  ]
-              },
+
               {
                   value: '3',
                   label: '生活智慧化指数分析',
@@ -341,7 +342,7 @@
               ]
           }
           ],
-          value: '要素高端化指数分析',
+          value: '治理现代化',
           type:0,
         nowDate: "",
         nowTime: "",
@@ -408,21 +409,21 @@
 
                 }
                if(_that.type == 1){
-                    _that.value = '生态绿色化指数分析'
+                    _that.value = '治理现代化指数分析'
                     document.querySelector('#cube-box2').getElementsByTagName("div")[0].classList.add('red')
                     document.querySelector('#cube-box2').getElementsByTagName("div")[1].classList.add('red')
                     document.querySelector('#cube-box2').getElementsByTagName("div")[2].classList.add('red')
                     document.querySelector('.cubeMain02').getElementsByTagName("div")[4].classList.add('active')
 
                 }else if(_that.type == 2){
-                    _that.value = '要素高端化指数分析'
+                    _that.value = '生态绿色化指数分析'
                     document.querySelector('#cube-box3').getElementsByTagName("div")[0].classList.add('red')
                     document.querySelector('#cube-box3').getElementsByTagName("div")[1].classList.add('red')
                     document.querySelector('#cube-box3').getElementsByTagName("div")[2].classList.add('red')
                     document.querySelector('.cubeMain03').getElementsByTagName("div")[4].classList.add('active')
 
                 }else if(_that.type == 3){
-                    _that.value = '治理现代化指数分析'
+                    _that.value = '要素高端化指数分析'
                     document.querySelector('#cube-box4').getElementsByTagName("div")[0].classList.add('red')
                     document.querySelector('#cube-box4').getElementsByTagName("div")[1].classList.add('red')
                     document.querySelector('#cube-box4').getElementsByTagName("div")[2].classList.add('red')
@@ -551,7 +552,7 @@
                 {
                     type: 'pie',
                     radius: ["9%", "10%"],
-                    center: ['50%', '48%'],
+                    center: ['50%', '50%'],
                     hoverAnimation: false,
                     labelLine: {
                         normal: {
@@ -578,7 +579,7 @@
                     name: '访问来源',
                     type: 'pie',
                     radius: ['15%', '40%'],
-                    center: ['50%', '48%'],
+                    center: ['50%', '50%'],
                     roseType: 'area',
                     zlevel:10,
                     label: {
@@ -1453,14 +1454,14 @@
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMains .shadow.active {color: #ffae00;font-size: 30px;}
-
+    /*175px','245px','220px','135px','190px*/
     .cubeMain02 .shadow {transform: none;
-        width: 126px;
+        width: 99px;
         height: 150px;
         position: absolute;
-        left: -1px;
-        bottom: 250px;
-        background-image: linear-gradient(rgba(255,0,0,0), rgba(12,97,231,.2));
+        left: -39px;
+        bottom: 150px;
+        background-image: linear-gradient(rgba(255,0,0,0), rgba(101,58,173,.2));
         z-index: 0;
         font-size: 20px;
         line-height: 130px;
@@ -1469,11 +1470,11 @@
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMain03 .shadow {transform: none;
-        width: 98px;
+        width: 125px;
         height: 150px;
         position: absolute;
-        left: 6px;
-        bottom: 190px;
+        left: -30px;
+        bottom: 240px;
         background-image: linear-gradient(rgba(255,0,0,0), rgba(65,155,164,.2));
         font-size: 20px;
         line-height: 130px;
@@ -1483,11 +1484,11 @@
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMain04 .shadow {transform: none;
-        width: 77px;
+        width: 116px;
         height: 150px;
         position: absolute;
-        left: 5px;
-        bottom: 98px;
+        left: -14px;
+        bottom: 195px;
         background-image: linear-gradient(rgba(255,0,0,0), rgba(65,155,164,.2));
         font-size: 20px;
         line-height: 130px;
@@ -1497,11 +1498,11 @@
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMain05 .shadow {transform: none;
-        width: 62px;
+        width: 90px;
         height: 150px;
         position: absolute;
-        left: 5px;
-        bottom: 31px;
+        left: 56px;
+        bottom: 136px;
         background-image: linear-gradient(rgba(255,0,0,0), rgba(225,217,155,.2));
         font-size: 18px;
         line-height: 130px;
@@ -1511,11 +1512,11 @@
         animation: fade-in;/*动画名称*/animation-duration: 2.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 2.5s;/*针对webkit内核*/
     }
     .cubeMain06 .shadow {transform: none;
-        width: 93px;
+        width: 99px;
         height: 150px;
         position: absolute;
-        left: 5px;
-        bottom: 130px;
+        left: 8px;
+        bottom: 140px;
         background-image: linear-gradient(rgba(255,0,0,0), rgba(225,217,155,.2));
         font-size: 20px;
         line-height: 130px;
@@ -1535,7 +1536,7 @@
     .cubeMain03 {width: 125px;height:100%;left: -30px;}
     .cubeMain04 {width: 80px;height:100%;left: -50px;}
     .cubeMain05 {width: 80px;height:100%;left: -72px;}
-    .cubeMain06 {width: 80px;height:100%;left: -85px;}
+    .cubeMain06 {width: 80px;height:100%;left: -10px;}
     .cube-box1 {
         width: 60px;
         height: 0;
@@ -1545,31 +1546,31 @@
         z-index: 1;
     }
     .cube-box2 {
-        left: -9px;bottom:35px;z-index: 1;
-        width: 90px;
-        height: 0;
-        position: absolute;
-    }
-    .cube-box3 {
-        left: 0;bottom: -22px;z-index: 4;
+        left: -44px;bottom:5px;z-index: 1;
         width: 70px;
         height: 0;
         position: absolute;
     }
+    .cube-box3 {
+        left: -38px;bottom: 20px;z-index: 4;
+        width: 90px;
+        height: 0;
+        position: absolute;
+    }
     .cube-box4 {
-        left: 0;bottom: 0;z-index: 3;
-        width: 55px;
+        left: -25px;bottom: 0;z-index: 4;
+        width: 85px;
         height: 0;
         position: absolute;
     }
     .cube-box5 {
-        left: 0;bottom: -36px;z-index: 4;
-        width: 45px;
+        left: 50px;bottom: 30px;z-index: 4;
+        width: 65px;
         height: 0;
         position: absolute;
     }
-    .cube-box6 {left: 0;bottom: -10px;z-index: 4;
-        width: 65px;
+    .cube-box6 {left: 3px;bottom: -10px;z-index: 4;
+        width: 70px;
         height: 0;
         position: absolute;
     }
@@ -1577,22 +1578,22 @@
     .cubeMain01 .text {position: absolute;bottom:-20%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain01 .text .hrs {display: block;height:110px;border-right: 2px dashed rgba(101,58,173,.2);width: 2px;margin: 0 auto 8px;}
-    .cubeMain02 .text {position: absolute;bottom:-29%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain02 .text {position: absolute;bottom:-29%;left:-32px;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain02 .text .hrs {display: block;height:210px;border-right: 2px dashed rgba(12,97,231,.2);width: 2px;margin: 0 auto 8px;}
-    .cubeMain03 .text {position: absolute;bottom:-20%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain03 .text {position: absolute;bottom:-20%;left:-3px;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
-    .cubeMain03 .text .hr {display: block;height:105px;border-right: 2px dashed rgba(65,155,164,.2);width: 2px;margin: 0 auto 8px;}
+    .cubeMain03 .text .hrs {display: block;height:105px;border-right: 2px dashed rgba(65,155,164,.2);width: 2px;margin: 0 auto 8px;}
 
-    .cubeMain04 .text {position: absolute;bottom:-29%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain04 .text {position: absolute;bottom:-29%;left:-11px;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain04 .text .hrs {display: block;height:202px;border-right: 2px dashed rgba(65,155,164,.2);width: 2px;margin: 0 auto 8px;}
 
-    .cubeMain05 .text {position: absolute;bottom:-20%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain05 .text {position: absolute;bottom:-20%;left:44px;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain05 .text .hrs {display: block;height:105px;border-right: 2px dashed rgba(225,217,155,.2);width: 2px;margin: 0 auto 8px;}
 
-    .cubeMain06 .text {position: absolute;bottom:-29%;left:0;width: 90px;text-align: center;color: #fff;font-size: 18px;
+    .cubeMain06 .text {position: absolute;bottom:-29%;left:14px;width: 90px;text-align: center;color: #fff;font-size: 18px;
         animation: fade-in;/*动画名称*/animation-duration: 3.5s;/*动画持续时间*/animation-delay: 1s;-webkit-animation:fade-in 3.5s;/*针对webkit内核*/}
     .cubeMain06 .text .hrs {display: block;height:165px;border-right: 2px dashed rgba(225,217,155,.2);width: 2px;margin: 0 auto 8px;}
 
@@ -1605,15 +1606,21 @@
     .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#653aad, #b660e3);}
     .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#5a45bf, #ae78e9);transform-origin: right top;transform: rotateY(90deg);}
     .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#684ec7, #9868d9);transform-origin: left top;transform: rotateX(90deg);}
-    #cube-box2 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#0c61e7, #139df4);}
-    #cube-box2 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#316fe4, #51cff7);transform-origin: right top;transform: rotateY(90deg);}
-    #cube-box2 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#2760b6, #4ba7fb);transform-origin: left top;transform: rotateX(90deg);}
-    #cube-box3 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#419ba4, #6ddce0);z-index: 3;}
-    #cube-box3 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#56c5d1, #a8ebef);transform-origin: right top;transform: rotateY(90deg);}
-    #cube-box3 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#64d2dc, #94e1e7);transform-origin: left top;transform: rotateX(90deg);}
-    #cube-box4 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#2c7ebc, #47cfe5);}
-    #cube-box4 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#4ea0df, #97dcf3);transform-origin: right top;transform: rotateY(90deg);}
-    #cube-box4 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#5bafe6, #7cc5ed);transform-origin: left top;transform: rotateX(90deg);}
+    #cube-box2 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#653aad, #b660e3);}
+    #cube-box2 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#5a45bf, #ae78e9);transform-origin: right top;transform: rotateY(90deg);}
+    #cube-box2 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#684ec7, #9868d9);transform-origin: left top;transform: rotateX(90deg);}
+    #cube-box3 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#0c61e7, #139df4);z-index: 3;}
+    #cube-box3 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#316fe4, #51cff7);transform-origin: right top;transform: rotateY(90deg);}
+    #cube-box3 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#2760b6, #4ba7fb);transform-origin: left top;transform: rotateX(90deg);}
+    /*#cube-box2 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#0c61e7, #139df4);}*/
+    /*#cube-box2 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#316fe4, #51cff7);transform-origin: right top;transform: rotateY(90deg);}*/
+    /*#cube-box2 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#2760b6, #4ba7fb);transform-origin: left top;transform: rotateX(90deg);}*/
+    /*#cube-box3 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#419ba4, #6ddce0);z-index: 3;}*/
+    /*#cube-box3 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#56c5d1, #a8ebef);transform-origin: right top;transform: rotateY(90deg);}*/
+    /*#cube-box3 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#64d2dc, #94e1e7);transform-origin: left top;transform: rotateX(90deg);}*/
+    #cube-box4 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#419ba4, #6ddce0);}
+    #cube-box4 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#56c5d1, #a8ebef);transform-origin: right top;transform: rotateY(90deg);}
+    #cube-box4 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#64d2dc, #94e1e7);transform-origin: left top;transform: rotateX(90deg);}
     #cube-box5 .cube1 {width: 100%;height: 100%;background-image: linear-gradient(#e1d99b, #caccbf);z-index: 5;}
     #cube-box5 .cube3 {width: 100%;height: 100%;background-image: linear-gradient(#f0e4d0, #faf5ee);transform-origin: right top;transform: rotateY(90deg);}
     #cube-box5 .cube5 {width: 100%;padding-top: 100%;background-image: linear-gradient(#f3e8d7, #f7eee2);transform-origin: left top;transform: rotateX(90deg);}
