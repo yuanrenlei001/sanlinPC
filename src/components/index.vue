@@ -14,7 +14,7 @@
         </el-col>
         <el-col :span="6" style="opacity: 0;"><router-link  to="/" style="display: block;">123</router-link></el-col>
         <el-col :span="3" class="tianqi">
-          <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
+          <iframe scrolling="no" id="tianqi" style="margin-top: 15%;margin-left: 15%;width: 100%;" src="https://tianqiapi.com/api.php?style=ta&skin=pitaya&color=fff&fontsize=16&city=湖州" frameborder="0" width="400" height="24"  allowtransparency="true"></iframe>
         </el-col>
         <el-col :span="6" class="cols windows" style="padding: 0;">
           <router-link class="windows6 menu" to="/product2">乡村治理</router-link>
@@ -52,7 +52,7 @@
                         <div class="leftBottomBg01" v-for="(item,index) in selects.obj">
                             <p style="font-size: 16px;color: #fff;margin-bottom: 5px;" >{{item.name}}</p>
                             <el-progress :text-inside="false" :stroke-width="27" :percentage="(item.value/3)"  :color="customColor[index]" style="font-size: 18px;"></el-progress>
-                            <div style="position: absolute;bottom:0;right:0;line-height: 27px;color: #48e3ff;">{{item.value}}%</div>
+                            <div style="position: absolute;bottom:0;right:0;line-height: 27px;color: #48e3ff;">{{item.value}}</div>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                       <img src="@/assets/index/xx05.png" alt="" class="xx03">
                       <img src="@/assets/index/xx05.png" alt="" class="xx04">
                       <img src="@/assets/index/xx05.png" alt="" class="xx05">
-                      总指数和一级指数
+                      数字乡村发展指数
                   </div>
               </div>
               <div class="cubeMain">
@@ -194,7 +194,7 @@
                                   <img src="@/assets/index/icon-deng-3.png" alt="" class="icon-deng2">
                               </div>
                               <div class="rightTop02-text">
-                                  <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal3' :duration='3000'></countTo>万</div>
+                                  <div class="rightTop01-text01">超<countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal3' :duration='3000'></countTo>万</div>
                                   <div class="rightTop01-text02">环保投入</div>
                               </div>
                           </div>
@@ -207,7 +207,7 @@
                                   <img src="@/assets/index/icon-deng-4.png" alt="" class="icon-deng2">
                               </div>
                               <div class="rightTop02-text">
-                                  <div class="rightTop01-text01"><countTo class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal4' :duration='3000'></countTo>元</div>
+                                  <div class="rightTop01-text01"><span class="rightTop01-text-num">38472</span> 元</div>
                                   <div class="rightTop01-text02">人均支配金额</div>
                               </div>
                           </div>
@@ -229,10 +229,10 @@
                   <div class="rightBottomTitle">三林简介</div>
                   <div id="demo" class="rightBottomText">
                       <ul id="demo1">
-                          <li>三林村地处禹越镇西北部，东临高桥村，南接夏东村，西靠新 安镇，北交新市镇，村委驻地与镇政府所在地相距8公里。村地域面 积5.8平方公里，拥有水田3070亩、桑地1291亩、鱼塘460亩。</li>
-                          <li>创新传承在中华民族的血脉之中、蕴含在马克思主义基本原理 之中、印刻在我们“新农人”的基因之中。创新离我们很近，哪怕 是迈出一小步、想一个小点子也是创新，我们每一个人身上都有创 。</li>
-                          <li>三林村地处禹越镇西北部，东临高桥村，南接夏东村，西靠新 安镇，北交新市镇，村委驻地与镇政府所在地相距8公里。村地域面 积5.8平方公里，拥有水田3070亩、桑地1291亩、鱼塘460亩。</li>
-                          <li>创新传承在中华民族的血脉之中、蕴含在马克思主义基本原理 之中、印刻在我们“新农人”的基因之中。创新离我们很近，哪怕 是迈出一小步、想一个小点子也是创新，我们每一个人身上都有创 。</li>
+                          <li>三林村地处禹越镇西北部，东临高桥村，南接夏东村，西靠新 安镇，北交新市镇，村委驻地与镇政府所在地相距8公里。村地域面 积6平方公里，拥有水田3070亩、桑地1291亩、鱼塘460亩。</li>
+                          <li>创新传承在中华民族的血脉之中、蕴含在马克思主义基本原理 之中、印刻在我们“新农人”的基因之中。创新离我们很近，哪怕 是迈出一小步、想一个小点子也是创新，我们每一个人身上都有创新点。</li>
+                          <li>三林村地处禹越镇西北部，东临高桥村，南接夏东村，西靠新 安镇，北交新市镇，村委驻地与镇政府所在地相距8公里。村地域面 积6平方公里，拥有水田3070亩、桑地1291亩、鱼塘460亩。</li>
+                          <li>创新传承在中华民族的血脉之中、蕴含在马克思主义基本原理 之中、印刻在我们“新农人”的基因之中。创新离我们很近，哪怕 是迈出一小步、想一个小点子也是创新，我们每一个人身上都有创新点。</li>
                       </ul>
                       <div id="demo2"></div>
                   </div>
@@ -273,8 +273,8 @@
         startVal: 0,
         endVal: 364,
         endVal2: 9,
-        endVal3: 300,
-        endVal4: 36867,
+        endVal3: 1000,
+        endVal4: 38412,
           percentage: [0,0,0,0],
           customColor: ['#cf830e','#21a692','#0d82db','#bb0004'],
         endVal5: 9.43, heights:['175px','245px','220px','135px','190px'],
@@ -353,6 +353,7 @@
     },
     created() {
       this.select();
+      this.zhu();
       // var test = document.getElementById('tianqi').contentWindow.document.getElementsByTagName("em");
       // test.style.color = "#fff";
     },
@@ -491,34 +492,14 @@
 
         },
         zhu(){
-            // setInterval(() => {
-            //     for(i=0;i<7;i++)
-            //     {
-            //         console.log(i);
-            //     }
-            // }, 4000)
             let boxs = document.getElementsByClassName('cube-box');
             let _this= this;
-            // for (var i = 0; i < boxs.length; i++) {
-            //     console.log(boxs[i].getElementsByTagName('div'));
-            // }
-            // for (let item in boxs) {
-            //     // let div = document.getElementsByClassName('cube')
-            //     console.log(boxs[item].getElementsByTagName('div'))
-            // }
             setInterval(() => {
                 boxs[0].style.height = _this.heights[0];
                 boxs[1].style.height = _this.heights[1];
                 boxs[2].style.height = _this.heights[2];
                 boxs[3].style.height = _this.heights[3];
                 boxs[4].style.height = _this.heights[4];
-                // boxs[5].style.height = _this.heights[5];
-                // for (let item in boxs) {
-                //     if (boxs[item].style) {
-                //         boxs[0].style.height = '165px';
-                //         boxs[1].style.height = '240px';
-                //     }
-                // }
             }, 1000)
         },
       change () {
@@ -855,7 +836,7 @@
       this.drawLine();
       // this.auto();
       this.$refs.example.start();
-        this.zhu();
+
         this.increase();
         // window.onload = function() {
         //     setTimeout(start, 200);
@@ -1139,6 +1120,10 @@
       if (this.getDate) {
         console.log("销毁定时器")
         clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
+      }
+      if (this.zhu()) {
+        console.log("销毁定时器")
+        clearInterval(this.zhu()); // 在Vue实例销毁前，清除时间定时器
       }
     }
   }

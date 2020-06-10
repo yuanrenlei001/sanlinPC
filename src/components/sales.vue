@@ -75,7 +75,7 @@
                 </div>
                 <div class="autoBottom" style="position: relative;">
                     <div class="rightTop01 jdt" style="position: absolute;top:10%;">
-                        <div class="rightTopText">产品流向图</div>
+                        <div class="rightTopText">乡村人员流向图</div>
                       <el-select v-model="value2" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;top:20px;left:40%;z-index: 99999;">
                         <el-option
                           v-for="item in options2"
@@ -93,28 +93,28 @@
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP4</div>
+                        <div class="rightTopText">2019优秀党员</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
                     <div class="rightTopTa" style="margin-bottom: 5%;">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span>乡村信息惠民服务</span>-------------------------------</div>
+                            <div class="rightTopTa01-2"><span>钱岚</span>---------------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top1-1.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top2.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">乡村数字信息化</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">房法娣</span>------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top2-2.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top3.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村医疗信息化</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">沈寿昌</span>--------------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top3-3.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">乡村保障信息化</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">卞兴泉</span>-----------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
                     </div>
@@ -122,28 +122,28 @@
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP4</div>
+                        <div class="rightTopText">2019先进乡贤</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
                     <div class="rightTopTa">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span>生活富裕</span>-------------------------------</div>
+                            <div class="rightTopTa01-2"><span>马军山</span>-----------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top1-1.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top2.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">收入水平</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">沈燕</span>--------------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top2-2.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top3.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民就业率</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">沈国松</span>----------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top3-3.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">居民幸福感</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">沈寿华</span>------------------------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                 endVal3: 300,
                 endVal4: 36867,
                 endVal5: 9.43,
-                computeNumber: ['0', '0', '0', '0', '3', '7', '2', '1', '4']
+                computeNumber: ['0', '0', '0', '0', '0', '0', '2', '1', '5']
             };
         },
         methods: {
@@ -666,8 +666,8 @@
                             tipHtml = '<div style="position: relative;width: 185px;height:122px;">'
                                 +'<img src="'+giftImageUrl+'" style="position: absolute;top:0;left:0;z-index: 0;">'
                                 +'<div style="font-size: 18px;color: #fff;width: 100%;text-align: center;position: relative;z-index: 1;height:48px;line-height: 48px;">'+params.name+'</div>'
-                                +'<div style="font-size: 14px;color: #fff;width: 100%;text-align: center;position: relative;z-index: 1;">产品销量 <span style="color: #ffa810;">'+(params.data !== undefined?params.data.value:0)+'</span> 吨</div>'
-                                +'<div style="font-size: 14px;color: #fff;width: 100%;text-align: center;position: relative;z-index: 1;">占市场份额 <span style="color: #ffa810;">'+(params.data !== undefined?params.data.value:0)+'</span> %</div>'
+                                +'<div style="font-size: 14px;color: #fff;width: 100%;text-align: center;position: relative;z-index: 1;">人员数量 <span style="color: #ffa810;">'+(params.data !== undefined?params.data.value:0)+'</span> 人</div>'
+                                +'<div style="font-size: 14px;color: #fff;width: 100%;text-align: center;position: relative;z-index: 1;">人员占比 <span style="color: #ffa810;">'+(params.data !== undefined?params.data.value:0)/10+'</span> %</div>'
                                 +'</div>';
                             setTimeout(function () {
                                 tooltipCharts(params.name);

@@ -35,21 +35,21 @@
                     <div class="date">
                         <img src="@/assets/quality/left02.png" alt="" class="left02">
                         <div class="dateSort">
-                            <div class="dateSort01"><div class="dateSort02">硕士生：</div><div class="dateSort03"> <span>10</span> 个</div></div>
-                            <div class="dateSort01"><div class="dateSort02">本科生：</div><div class="dateSort03"> <span>32</span> 个</div></div>
-                            <div class="dateSort01"><div class="dateSort02">高中：</div><div class="dateSort03"> <span>107</span> 个</div></div>
-                            <div class="dateSort01"><div class="dateSort02">专科：</div><div class="dateSort03"> <span>89</span> 个</div></div>
+                            <div class="dateSort01"><div class="dateSort02">硕士及以上：</div><div class="dateSort03"> <span>35</span> 个</div></div>
+                            <div class="dateSort01"><div class="dateSort02">本科生：</div><div class="dateSort03"> <span>161</span> 个</div></div>
+                            <div class="dateSort01"><div class="dateSort02">专科：</div><div class="dateSort03"> <span>183</span> 个</div></div>
+                            <div class="dateSort01"><div class="dateSort02">高中：</div><div class="dateSort03"> <span>81</span> 个</div></div>
                         </div>
                     </div>
                     <div class="approve">
-                        <div class="approveTop">荣誉村民</div>
+                        <div class="approveTop">荣誉村民 （2019） 排名不分先后</div>
                         <div class="approveBottom">
-                            <div><span>1</span>张三  获奖时间：1999年</div>
-                            <div><span>2</span>李四  获奖时间：1999年</div>
-                            <div><span>3</span>王五  获奖时间：1999年</div>
-                            <div><span>4</span>赵六  获奖时间：1999年</div>
-                            <div><span>5</span>赵六  获奖时间：1999年</div>
-                            <div><span>6</span>赵六  获奖时间：1999年</div>
+                            <div><span>1</span>蔡洪章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 高琴英</div>
+                            <div><span>2</span>胡晓依 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 贾世兰</div>
+                            <div><span>3</span>沈炳坤 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 沈建英</div>
+                            <div><span>4</span>沈益庆家庭 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 徐晓华</div>
+                            <div><span>5</span>姚建文 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 钟松华</div>
+                            <div><span>6</span>沈寿华</div>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                                         <img src="@/assets/quality/autoBottom01.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num" >64</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num" >788</span></div>
                                         <div class="rightTop01-text02">文明户</div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                         <img src="@/assets/quality/autoBottom02.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">10</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">55</span></div>
                                         <div class="rightTop01-text02">村民代表</div>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                                         <img src="@/assets/quality/autoBottom03.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">14</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">96</span></div>
                                         <div class="rightTop01-text02">党员</div>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                                         <img src="@/assets/quality/autoBottom04.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">17</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">91</span></div>
                                         <div class="rightTop01-text02">退役军人</div>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                         <img src="@/assets/quality/autoBottom05.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">17</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">7</span></div>
                                         <div class="rightTop01-text02">帮扶人员</div>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                         <img src="@/assets/quality/autoBottom06.png" alt="" class="icon-deng2">
                                     </div>
                                     <div class="rightTop02-text">
-                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">10</span></div>
+                                        <div class="rightTop01-text01"><span class="rightTop01-text-num">57</span></div>
                                         <div class="rightTop01-text02">乡 贤</div>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                 endVal3: 300,
                 endVal4: 36867.5,
                 endVal5: 9.43,
-                computeNumber: ['0', '0', '0', '0', '0', '3', '2', '7', '2'],
+                computeNumber: ['0', '0', '0', '0', '0', '3', '9', '1', '7'],
                 options: [
                     {
                     value: '选项1',
@@ -664,7 +664,7 @@
         background-size: 100% 61px;
         line-height: 61px;color: #49bdff;font-size: 20px;padding-left: 55px;
     }
-    .approveBottom div {width: 100%;height:29px;margin-bottom: 1px;background: rgba(255,255,255,.2);line-height: 29px;position: relative;color: #b6cde5;}
+    .approveBottom div {width: 100%;height:29px;margin-bottom: 1px;line-height: 29px;position: relative;color: #b6cde5;}
     .approveBottom div span {display: block;float:left;width:39px;text-align: center;background: rgba(255,255,255,.1);margin-right: 10px;}
     .number-item {
         width: 30px;

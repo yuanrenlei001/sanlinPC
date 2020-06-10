@@ -44,12 +44,12 @@
                     <div class="approve">
                         <div class="approveTop">最新通过环保认证企业</div>
                         <div class="approveBottom">
-                            <div><span>1</span>三林农副食品有限公司</div>
-                            <div><span>2</span>三林农副食品有限公司</div>
-                            <div><span>3</span>三林农副食品有限公司</div>
-                            <div><span>4</span>三林农副食品有限公司</div>
-                            <div><span>5</span>三林农副食品有限公司</div>
-                            <div><span>6</span>三林农副食品有限公司</div>
+                            <div><span>1</span>滋农乡旅旅游开发有限公司</div>
+                            <div><span>2</span>德清县康润生态农业开发有限公司</div>
+                            <div><span>3</span>湖州市千丝家用纺织品有限公司</div>
+                            <div><span>4</span>德清县大禹生态农业开发有限公司</div>
+<!--                            <div><span>5</span></div>-->
+<!--                            <div><span>6</span></div>-->
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                                     :data="tableData3"
                                     height="340"
                                     style="width: 100%;background: transparent;">
-                                <el-table-column width="200" prop="name" label="企业名称" ></el-table-column>
+                                <el-table-column width="250" prop="name" label="企业名称" ></el-table-column>
                                 <el-table-column prop="pro" label="产品名称" ></el-table-column>
                                 <el-table-column prop="prosort" label="产品类型"></el-table-column>
                                 <el-table-column prop="pronum" label="批次号"></el-table-column>
@@ -205,20 +205,20 @@
                             <div class="rightTopBg22">
                                 <div class="actives">播 种</div>
                                 <div>施 肥</div>
-                                <div>胶 水</div>
+                                <div>浇 水</div>
                                 <div>害虫防治</div>
                                 <div>农事活动</div>
                             </div>
                             <el-table
-                                    :data="tableData3"
+                                    :data="tableData4"
                                     height="340"
                                     style="width: 100%;background: transparent;">
-                                <el-table-column width="200" prop="name" label="企业名称" ></el-table-column>
-                                <el-table-column prop="pro" label="产品名称" ></el-table-column>
-                                <el-table-column prop="prosort" label="产品类型"></el-table-column>
-                                <el-table-column prop="pronum" label="批次号"></el-table-column>
-                                <el-table-column prop="proliang" label="产量"></el-table-column>
-                                <el-table-column prop="time" label="生产时间"></el-table-column>
+                                <el-table-column  prop="name" label="种子" ></el-table-column>
+                                <el-table-column prop="pro" label="方法" ></el-table-column>
+                                <el-table-column prop="prosort" label="播种方法"></el-table-column>
+                                <el-table-column prop="pronum" label="种子用量"></el-table-column>
+                                <el-table-column prop="proliang" label="种植面积"></el-table-column>
+                                <el-table-column prop="time" label="播种时间"></el-table-column>
                             </el-table>
                         </div>
                     </div>
@@ -279,23 +279,17 @@
                 }],
                 value: '',
                 tableData3: [
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
-                    {name: '东恒经贸集团有限公司', pro: '乌猪', prosort: '养殖业',pronum:'1901213',proliang:'1123',time:'2019-09-14'},
+                    {name: '滋农乡旅旅游开发有限公司', pro: '雪糕', prosort: '食品加工',pronum:'190916',proliang:'1123',time:'2019-09-16'},
+                    {name: '湖州市千丝家用纺织品有限公司', pro: '蚕丝被', prosort: '丝绸工艺',pronum:'190816',proliang:'512',time:'2019-08-16'},
+                    {name: '德清县大禹生态农业开发有限公司', pro: '草莓', prosort: '种植业',pronum:'190106',proliang:'1000',time:'2019-01-06'},
+                    {name: '德清县康润生态农业开发有限公司', pro: '生猪', prosort: '养殖业',pronum:'1901213',proliang:'288',time:'2019-09-22'},
+                    {name: '德清禹越镇新越花卉园', pro: '鲜花', prosort: '种殖业',pronum:'1901213',proliang:'5000',time:'2019-05-06'},
                     ],
+              tableData4: [
+                {name: '西红柿', pro: '侵种', prosort: '人工',pronum:'1000',proliang:'10',time:'2019-05-06'},
+                {name: '土豆', pro: '催芽', prosort: '人工',pronum:'1000',proliang:'10',time:'2019-05-06'},
+                {name: '黄瓜', pro: '催芽', prosort: '人工',pronum:'1000',proliang:'10',time:'2019-05-06'},
+              ],
                 rbsort: require('@/assets/quality/rightBottomSort.png'),
                 rbsortAc: require('@/assets/quality/rightBottomAc.png'),
             };
@@ -613,7 +607,7 @@
         border-radius: 0;
         background: rgba(0,0,0,0.1);
     }
-    .rightTopBg2 >>> .el-table__header-wrapper {display: none;}
+    /*.rightTopBg2 >>> .el-table__header-wrapper {display: none;}*/
 
     .rightTopBg22 {width:100%;height:37px;line-height: 37px;padding-top: 13px;}
     .rightTopBg22 div {
@@ -669,7 +663,7 @@
         background-size: 100% 61px;
         line-height: 61px;color: #49bdff;font-size: 20px;padding-left: 55px;
     }
-    .approveBottom div {width: 100%;height:29px;margin-bottom: 1px;background: rgba(255,255,255,.2);line-height: 29px;position: relative;color: #b6cde5;}
+    .approveBottom div {width: 100%;height:39px;margin-bottom: 1px;line-height: 39px;position: relative;color: #b6cde5;}
     .approveBottom div span {display: block;float:left;width:39px;text-align: center;background: rgba(255,255,255,.1);margin-right: 10px;}
     .number-item {
         width: 30px;

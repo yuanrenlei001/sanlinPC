@@ -68,14 +68,14 @@
                         </div>
                     </div>
                     <div class="autoBottomText">
-                        <div class="autoBottom"><img src="@/assets/sales/sales-icon04.png" alt=""> 电商注册平台：<span
-                                class="autoBottomNum">1</span><span class="autoBottomNum">3</span><span
+                        <div class="autoBottom"><img src="@/assets/sales/sales-icon04.png" alt=""> 电商平台：<span
+                                class="autoBottomNum">0</span><span class="autoBottomNum">3</span><span
                                 class="autoBottomNum">4</span> <span class="autoBottomSpan">个</span></div>
                     </div>
                 </div>
                 <div class="autoBottom" style="position: relative;">
                     <div class="rightTop01 jdt" style="position: absolute;top:10%;">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                        <div class="rightTopText">产品流向分布图</div>
                       <el-select v-model="value2" :popper-append-to-body="false" placeholder="请选择"  popper-class="el-popper" style="background-color: #030813;top:20px;left:40%;z-index: 99999;">
                         <el-option
                           v-for="item in options2"
@@ -93,33 +93,33 @@
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                        <div class="rightTopText">公司潜力排行榜</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
                     <div class="rightTopTa">
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top1.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span>三林海洋股份有限公司</span>-------------------------------</div>
+                            <div class="rightTopTa01-2"><span>滋农乡旅旅游开发有限公司</span>--------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top1-1.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top2.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">三林阁文化旅游集团有限公司</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #e5cb54;">湖州市千丝家用纺织品有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top2-2.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top3.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">德清县大禹生态农业开发有限公司</span>---------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top3-3.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top4.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林阁文化旅游集团有限公司</span>----------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">德清县康润生态农业开发有限公司</span>----------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top4-4.png" alt=""></div>
                         </div>
                         <div class="rightTopTa01">
                             <div class="rightTopTa01-1"><img src="@/assets/sales/sales-top5.png" alt=""></div>
-                            <div class="rightTopTa01-2"><span style="color: #49bdff;">三林市供水总公司</span>------------------------------</div>
+                            <div class="rightTopTa01-2"><span style="color: #49bdff;">德清禹越镇新越花卉园</span>------------------------------</div>
                             <div class="rightTopTa01-3"><img src="@/assets/sales/sales-top5-5.png" alt=""></div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                 <div class="rightTop">
                     <div class="rightTop01">
                         <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                        <div class="rightTopText">最受欢迎的TOP5</div>
+                        <div class="rightTopText">最受欢迎的产品</div>
                         <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                     </div>
                     <div class="rightTopTa">
@@ -423,7 +423,10 @@
                     },
                     "color": ["#e6b418", '#0f94ff'],
                     legend: {
-                        data: ['解决事项', '未解决事项'],
+                        data: ['今年', '去年'],
+                      x: 'right',
+                      y: 'canter',
+                      padding: [0, 50, 0, 0],
                         textStyle: {color: '#ffffff'}
                     },
                     xAxis: [
@@ -481,7 +484,7 @@
                     ],
                     series: [
                         {
-                            name: "解决事项",
+                            name: "今年",
                             "type": "pictorialBar",
                             "symbolSize": [12, 10],
                             "symbolOffset": [-8, -5],
@@ -520,7 +523,7 @@
                             "data": [300, 345, 450, 480, 360, 170, 180, 390, 270, 180, 90, 260]
                         },
                         {
-                            name: '未解决事项',
+                            name: '去年',
                             type: 'bar',
                             "barWidth": "12",
                             data: [200, 245, 350, 380, 260, 100, 130, 290, 170, 80, 90, 160]

@@ -41,7 +41,7 @@
                     <div class="fazhi">
                         <div class="fazhi01">
                             <div class="news-zbsj-01"><span>·</span> 村民调解员</div>
-                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">王小华</div>
+                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">沈建冬</div>
                         </div>
                         <div class="fazhi01">
                             <div class="news-zbsj-01"><span>·</span> 调解次数</div>
@@ -50,7 +50,7 @@
                         <img src="@/assets/index/hr.png" class="hr" alt="">
                         <div class="fazhi01">
                             <div class="news-zbsj-01"><span>·</span> 村民法律顾问</div>
-                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">顾中华</div>
+                            <div class="rightTop01-text01" style="font-size: 22px;font-weight: bold;height:48px;line-height: 48px;">夏胜晨</div>
                         </div>
                         <div class="fazhi01">
                             <div class="news-zbsj-01"><span>·</span> 法律咨询次数</div>
@@ -102,7 +102,9 @@
                                 <div class="sanwu01">
                                     <p class="sanwu02">三务公开次数</p>
                                     <div class="sanwu03">
-                                        <div class="rightTop01-text01" style="color: #48e3ff;"><countTo style="margin-left: 0;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal3' :duration='10000'></countTo>次 <span class="newsMore">查看更多新闻</span></div>
+                                        <div class="rightTop01-text01" style="color: #48e3ff;"><countTo style="margin-left: 0;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal3' :duration='10000'></countTo>次
+<!--                                          <span class="newsMore">查看更多新闻</span>-->
+                                        </div>
 
                                     </div>
                                 </div>
@@ -123,7 +125,7 @@
                 </div>
                 <div style="margin-top: 16px;position: relative;">
                     <img src="@/assets/news/bg06.png" alt="" style="">
-                    <div class="rightBottomTitle" style="position: absolute;top:0;">美丽公路</div>
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">垃圾分类</div>
                     <div class="laji">
                         <div class="lajiSort">
                             <div class="lajiTop">
@@ -132,7 +134,8 @@
                             </div>
                             <div style="font-size: 18px;color: #fff;margin-top: 10px;">保洁员</div>
                             <div class="user">
-                                <span>王小华</span><img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">
+                                <span>周金祥</span>
+<!--                              <img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">-->
                             </div>
                         </div>
                         <div class="lajiSort">
@@ -142,7 +145,8 @@
                             </div>
                             <div style="font-size: 18px;color: #fff;margin-top: 10px;">分类巡逻员</div>
                             <div class="user">
-                                <span>盛星宇</span><img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">
+                                <span>姚武杰</span>
+<!--                              <img src="@/assets/news/icon04.png" alt="" class="ic04"><img src="@/assets/news/icon05.png" alt="" class="ic05">-->
                             </div>
                         </div>
                         <div class="lajiSort">
@@ -150,7 +154,7 @@
                                 <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
                                 <img src="@/assets/news/ic03.png" alt="" class="cubeBottomLeftImg02">
                             </div>
-                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">分类准确率</div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">参与率</div>
                             <div class="user">
                                 <div class="rightTop01-text01" ><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal001' :duration='5000'></countTo>%</div>
                             </div>
@@ -160,9 +164,9 @@
                                 <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
                                 <img src="@/assets/news/ic04.png" alt="" class="cubeBottomLeftImg02">
                             </div>
-                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">无垃圾</div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">分类准确率</div>
                             <div class="user">
-                                <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal002' :duration='5000'></countTo>户</div>
+                                <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal002' :duration='5000'></countTo>%</div>
                             </div>
                         </div>
                         <div class="lajiSort">
@@ -170,7 +174,7 @@
                                 <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
                                 <img src="@/assets/news/ic05.png" alt="" class="cubeBottomLeftImg02">
                             </div>
-                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">有垃圾</div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">无垃圾</div>
                             <div class="user">
                                 <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal003' :duration='5000'></countTo>户</div>
                             </div>
@@ -180,7 +184,7 @@
                                 <img src="@/assets/news/icon03.png" alt="" class="cubeBottomLeftImg01">
                                 <img src="@/assets/news/ic06.png" alt="" class="cubeBottomLeftImg02">
                             </div>
-                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">满垃圾</div>
+                            <div style="font-size: 18px;color: #fff;margin-top: 10px;">有垃圾</div>
                             <div class="user">
                                 <div class="rightTop01-text01"><countTo style="font-size: 30px;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal004' :duration='5000'></countTo>户</div>
                             </div>
@@ -194,11 +198,11 @@
                             <div class="rightBottomTitle" style="position: absolute;top:0;">美丽公路</div>
                             <div class="rightTopBgText">
                                 <el-table
-                                        :data="tableData3"
+                                        :data="tableData4"
                                         height="210"
                                         style="width: 100%;background: transparent;">
                                     <el-table-column width="200" prop="name" label="路长"></el-table-column>
-                                    <el-table-column prop="pronum" label="异常路段"></el-table-column>
+                                    <el-table-column prop="pronum" label="巡逻路段"></el-table-column>
                                 </el-table>
                             </div>
                         </div>
@@ -209,7 +213,7 @@
                             <div class="rightBottomTitle" style="position: absolute;top:0;">平安乡村</div>
                             <div class="rightTopBgText">
                                 <el-table
-                                        :data="tableData3"
+                                        :data="tableData5"
                                         height="210"
                                         style="width: 100%;background: transparent;">
                                     <el-table-column width="200" prop="name" label="安导员"></el-table-column>
@@ -224,11 +228,11 @@
             <div class="bodys" style="margin-left: 12px;width: 464px;">
                 <div class="grid-content">
                     <img src="@/assets/news/bg02.png" alt="" style="width: 100%;">
-                    <div class="rightBottomTitle" style="position: absolute;top:0;">返贫检测</div>
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">脱贫检测</div>
                     <div class="sanwu">
                         <img src="@/assets/news/icon01.png" alt="">
                         <div class="sanwu01">
-                            <p class="sanwu02">返贫人口数</p>
+                            <p class="sanwu02">脱贫人口数</p>
                             <div class="sanwu03">
                                 <div class="rightTop01-text01" style="color: #48e3ff;"><countTo style="margin-left: 0;" class="rightTop01-text-num" ref='example' :startVal='startVal' :endVal='endVal4' :duration='10000'></countTo>人</div>
 
@@ -238,7 +242,7 @@
                 </div>
                 <div class="grid-content" style="margin-top: 16px;">
                     <img src="@/assets/news/bg04.png" alt="" style="width: 100%;">
-                    <div class="rightBottomTitle" style="position: absolute;top:0;">返贫检测</div>
+                    <div class="rightBottomTitle" style="position: absolute;top:0;">智慧党建</div>
                     <div style="position: absolute;top:45px;left:0;">
                         <div class="rightTop01">
                             <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
@@ -308,7 +312,7 @@
                         </div>
                         <div class="rightTop01">
                             <img src="@/assets/sales/sales-hr.png" class="rightTop01Img" alt="">
-                            <div class="rightTopText">最受欢迎的TOP5</div>
+                            <div class="rightTopText">本月党员走访</div>
                             <img src="@/assets/sales/sales-hr.png" alt="" class="rightTop01Img2">
                         </div>
                         <div class="fazhi" style="position: relative;top:0;left:0;">
@@ -346,48 +350,49 @@
                 num: 0,
                 numTween: 0,
                 startVal: 0,
-                endVal: 12,
-                endVal1: 8,
-                endVal2: 40,
-                endVal3: 98,
-                endVal4: 123,
-                endVal5: 43,
-                endVal6: 56,
-                endVal01: 71,
-                endVal02: 175,
-                endVal03: 60,
-                endVal04: 14,
-                endVal05: 31,
+                endVal: 180,
+                endVal1: 180,
+                endVal2: 100,
+                endVal3: 12,
+                endVal4: 10,
+                endVal5: 12,
+                endVal6: 1,
+                endVal01: 1,
+                endVal02: 12,
+                endVal03: 100,
+                endVal04: 12,
+                endVal05: 78,
                 endVal06: 6,
                 endVal07: 0,
                 endVal08: 0,
                 endVal09: 0,
-                endVal10: 71,
+                endVal10: 96,
                 endVal11: 100,
-                endVal12: 71,
+                endVal12: 96,
                 endVal13: 100,
-                endVal001: 99,
-                endVal002: 74,
-                endVal003: 54,
-                endVal004: 200,
+                endVal001: 100,
+                endVal002: 99,
+                endVal003: 23,
+                endVal004: 982,
                 computeNumber: ['0', '9', '6', '9', '4', '3', '3', '2', '6'],
                 tableData3: [
-                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
-                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
-                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
-                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
-                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
-                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
-                    {name: '林子新', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
-                    {name: '罗吉河', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
-                    {name: '陈子飞', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
-                    {name: '王凯军', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:'月20日11点-13点',time:'2019-09-14'},
+                    {name: '蔡法坤', pro: '4000', prosort: '289',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                    {name: '卞兴泉', pro: '4000', prosort: '289',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                    {name: '范荣泉', pro: '4000', prosort: '289',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                    {name: '沈小林', pro: '1500', prosort: '289',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
                 ],
+              tableData4: [
+                {name: '姚文仙', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                {name: '蔡杏定', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                {name: '周梅珍', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                {name: '曹坤仙', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
+              ],
+              tableData5: [
+                {name: '沈建冬', pro: '1123', prosort: '14',pronum:'三林村口',proliang:'3月20日3点-5点',time:'2019-09-14'},
+                {name: '赵兴泉', pro: '5024', prosort: '58',pronum:'三林村委附近',proliang:'3月20日5点-7点',time:'2019-09-14'},
+                {name: '沈华峰', pro: '2045', prosort: '23',pronum:'三林国际农庄门口',proliang:' 3月20日7点-9点',time:'2019-09-14'},
+                {name: '沈寿昌', pro: '4527', prosort: '34',pronum:'三林精品荷田旁',proliang:'3月20日9点-11点',time:'2019-09-14'},
+              ],
             };
         },
         methods: {
@@ -522,9 +527,9 @@
                             },
                             data: [
                                 {value: 2, name: '工业用地',itemStyle:{color:'#31b9e4'}},
-                                {value: 3, name: '林地',itemStyle:{color:'#1172e1'}},
-                                {value: 10, name: '农业用地',itemStyle:{color:'#d87017'}},
-                                {value: 85, name: '宅基地',itemStyle:{color:'#f0d22d'}},
+                                {value: 40, name: '林地',itemStyle:{color:'#1172e1'}},
+                                {value: 48, name: '农业用地',itemStyle:{color:'#d87017'}},
+                                {value: 10, name: '宅基地',itemStyle:{color:'#f0d22d'}},
                             ],
                             emphasis: {
                                 itemStyle: {
@@ -565,7 +570,7 @@
                         textStyle: {
                             color: "#fff"
                         },
-                        data: ['长年供给人', '一般贫困户', '低保贫困户', '一般人员']
+                        data: ['一般人员', '低保边缘户', '低保贫困户','特困户']
                     },
                     series: [
                         {
@@ -611,10 +616,10 @@
                                 show: false
                             },
                             data: [
-                                {value: 2, name: '长年供给人',itemStyle:{color:'#5ae1cc'}},
-                                {value: 3, name: '一般贫困户',itemStyle:{color:'#1172e1'}},
-                                {value: 10, name: '低保贫困户',itemStyle:{color:'#d87117'}},
-                                {value: 85, name: '一般人员',itemStyle:{color:'#0864da'}},
+                                {value: 0.5, name: '低保贫困户',itemStyle:{color:'#5ae1cc'}},
+                                {value: 0.3, name: '低保边缘户',itemStyle:{color:'#d87117'}},
+                                {value: 99.1, name: '一般人员',itemStyle:{color:'#0864da'}},
+                                {value: 0.1, name: '特困户',itemStyle:{color:'#bb0004'}},
                             ],
                             emphasis: {
                                 itemStyle: {
